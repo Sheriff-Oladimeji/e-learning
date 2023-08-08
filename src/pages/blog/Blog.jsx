@@ -1,5 +1,6 @@
 import HeraderImg from '../../assets/Background.png'
 import BlogCard from '../../components/Blog/Blog-card'
+import ArticleCard from '../../components/Blog/article-card'
 
 const Blog = () => {
   return (
@@ -7,6 +8,7 @@ const Blog = () => {
      <div>
      <img src={HeraderImg} alt="" />
      <BlogCard />
+     <ArticleCard />
      </div>
     </main>
   )

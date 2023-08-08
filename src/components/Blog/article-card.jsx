@@ -1,4 +1,4 @@
-import blogData from '../../data/blog/blog.json'
+import articleData from '../../data/blog/article.json'
 import BlogA from '../../assets/Blog 1.png';
 import BlogB from '../../assets/Business.png'
 import BlogC from '../../assets/Design 1.png'
@@ -16,13 +16,13 @@ const imageMap = {
     // Add mappings for other blog images
   };
 
-const BlogCard = () => {
+const ArticleCard = () =>{
     return (
-      <div className="my-9">
+        <div className="my-9">
         <div className="flex justify-between">
           <div>
             <h3 className="text-xl font-bold">
-              Popular<span className="text-[#F0A305] px-2">Articles</span>
+              Latestest<span className="text-[#F0A305] px-2">Articles</span>
             </h3>
           </div>
           <div className="flex">
@@ -32,7 +32,7 @@ const BlogCard = () => {
   
         <div className="mx-auto w-full">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 mx-auto gap-6 mt-8">
-            {blogData.map((blog, index) => (
+            {articleData.map((blog, index) => (
               <div
                 key={index}
                 className="bg-white shadow-md items-center rounded-lg max-w-xs"
@@ -77,10 +77,7 @@ const BlogCard = () => {
           </div>
         </div>
       </div>
-
-      
     );
-  };
-  
-  export default BlogCard;
-  
+}
+
+export default ArticleCard;
