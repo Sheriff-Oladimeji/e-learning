@@ -12,7 +12,7 @@
 const Footer = () => {
   return (
     <div>
-      <div className="bg-[#033484] w-full relative  h-fit p-10 grid lg:grid-cols-5 md:grid:cols-3 sm:grid-cols-2">
+      <div className="bg-[#033484] w-full relative text-white  h-fit p-10 grid lg:grid-cols-5 md:grid:cols-3 sm:grid-cols-2">
         {/* logo section */}
         <div>
           <div className="logo">
@@ -77,7 +77,7 @@ const Footer = () => {
               />
             </svg>
           </div>
-          <p className="text-gray-400 text-sm w-9/12 ">
+          <p className=" text-sm w-9/12 ">
             Access quality education from expert tutors and unlock your full
             potential.
           </p>
@@ -85,37 +85,37 @@ const Footer = () => {
 
         {/* company's section */}
         <div>
-          <h5 className="text-xl font-bold text-gray-300 ">Company</h5>
-          <p className="text-gray-400 text-sm my-3">About Us</p>
-          <p className="text-gray-400 text-sm my-3">Become a tutor</p>
-          <p className="text-gray-400 text-sm my-3">Testimonial</p>
-          <p className="text-gray-400 text-sm my-3">Partnership</p>
-          <p className="text-gray-400 text-sm my-3">Blog</p>
-          <p className="text-gray-400 text-sm my-3">Template</p>
+          <h5 className="text-xl font-bold  ">Company</h5>
+          <p className=" text-sm my-3">About Us</p>
+          <p className=" text-sm my-3">Become a tutor</p>
+          <p className=" text-sm my-3">Testimonial</p>
+          <p className=" text-sm my-3">Partnership</p>
+          <p className=" text-sm my-3">Blog</p>
+          <p className=" text-sm my-3">Template</p>
         </div>
 
         {/* Courses section */}
         <div>
-          <h5 className="text-xl font-bold text-gray-300 ">Courses </h5>
-          <p className="text-gray-400 text-sm my-3">Development</p>
-          <p className="text-gray-400 text-sm my-3">Design</p>
-          <p className="text-gray-400 text-sm my-3">Business</p>
-          <p className="text-gray-400 text-sm my-3">Marketing</p>
-          <p className="text-gray-400 text-sm my-3">Data Science</p>
+          <h5 className="text-xl font-bold  ">Courses </h5>
+          <p className=" text-sm my-3">Development</p>
+          <p className=" text-sm my-3">Design</p>
+          <p className=" text-sm my-3">Business</p>
+          <p className=" text-sm my-3">Marketing</p>
+          <p className=" text-sm my-3">Data Science</p>
         </div>
 
         {/* Legal section */}
         <div>
-          <h5 className="text-xl font-bold text-gray-300 ">Legal</h5>
-          <p className="text-gray-400 text-sm my-3">Privacy Policy</p>
-          <p className="text-gray-400 text-sm my-3">Term of Service</p>
-          <p className="text-gray-400 text-sm my-3">Accessibility</p>
+          <h5 className="text-xl font-bold  ">Legal</h5>
+          <p className=" text-sm my-3">Privacy Policy</p>
+          <p className=" text-sm my-3">Term of Service</p>
+          <p className=" text-sm my-3">Accessibility</p>
         </div>
 
         {/* contaxt section */}
         <div>
-          <h5 className="text-xl font-bold text-gray-300 ">Contact Us</h5>
-          <p className="text-gray-400 text-sm my-3"> Were here to help. Reach out to us via our social platforms. We
+          <h5 className="text-xl font-bold ">Contact Us</h5>
+          <p className= "text-sm my-3"> Were here to help. Reach out to us via our social platforms. We
             look forward to hearing from you!
           </p>
           <div className="flex items-center">
@@ -163,7 +163,7 @@ const Footer = () => {
             </button>
           </div>
         </div>
-        <p className="text-gray-400 absolute bottom-0 text-sm  w-full mx-auto text-center my-5">
+        <p className=" absolute bottom-0 text-sm  w-full mx-auto text-center my-5">
           @ 2023 (Company’s Name) inc. All rights reserved
         </p>
       </div>
