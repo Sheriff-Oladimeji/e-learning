@@ -37,12 +37,18 @@ const NewCourses = () => {
                 </div>
               </div>
               <div className="flex items-center justify-between">
-                <div className="flex gap-2 items-center">
+                <div className="flex flex-wrap gap-2 items-center">
                   <h4 className="text-lg font-bold text-darkblue">
                     {course.price}
                   </h4>
-                  {course.initialPrice && <span>{course.initialPrice}</span>}
-                  {course.discount && <small>{course.discount}</small>}
+                  {course.initialPrice && (
+                    <span className="text-lightslateblue line-through text-sm ">
+                      {course.initialPrice}
+                    </span>
+                  )}
+                  {course.discount && (
+                    <small className="text-xs">{course.discount}</small>
+                  )}
                 </div>
                 <button className="bg-none outline-none border-none text-blue font-semibold">
                   Add to Cart

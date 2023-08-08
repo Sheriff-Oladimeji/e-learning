@@ -57,8 +57,8 @@ const Courses = () => {
                   <h4 className="text-lg font-bold text-darkblue">
                     {course.price}
                   </h4>
-                  {course.initialPrice && <span>{course.initialPrice}</span>}
-                  {course.discount && <small>{course.discount}</small>}
+                  {course.initialPrice && <span className="text-lightslateblue line-through text-sm ">{course.initialPrice}</span>}
+                  {course.discount && <small className="text-xs">{course.discount}</small>}
                 </div>
                 <button className="bg-none outline-none border-none text-blue font-semibold">
                   Add to Cart
