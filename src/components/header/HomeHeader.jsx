@@ -4,7 +4,7 @@
 import Button from "../button/Button";
 const HomeHeader = () => {
   return (
-    <header className="flex  flex-col-reverse md:flex-row items-center justify-between mb-8 md:flex-row gap-8">
+    <header className="flex  flex-col-reverse md:flex-row items-center justify-between mb-8  gap-8">
       <div className="flex-1 flex flex-col text-center md:text-start gap-6">
         <h1 className="font-bold text-darkblue text-3xl md:text-5xl leading-snug">
           Unleash Your <span className="text-yellow">Creativity</span> and Make
