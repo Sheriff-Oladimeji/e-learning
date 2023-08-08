@@ -4,11 +4,7 @@ import hero from "../../assets/hero.png"
 import Button from "../button/Button";
 const HomeHeader = () => {
   return (
-<<<<<<< HEAD
-    <header className="flex  flex-col-reverse md:flex-row items-center justify-between mb-8  gap-8">
-=======
     <header className="flex  flex-col-reverse items-center justify-between mb-8 md:flex-row gap-8">
->>>>>>> a949ad2167bc22be83a8bc6ad28bde9eb83c9d92
       <div className="flex-1 flex flex-col text-center md:text-start gap-6">
         <h1 className="font-bold text-darkblue text-3xl md:text-5xl leading-snug">
           Unleash Your <span className="text-yellow">Creativity</span> and Make

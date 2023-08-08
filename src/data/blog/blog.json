@@ -1,6 +1,29 @@
-[{
-
-},{
-    
-}
+ [{
+    "image": "BlogA",
+    "category": "Web Development",
+    "date": "May 27, 2023",
+    "title": "Mastering Front-End Development: Essential HTML, CSS, and JavaScript Skills",
+    "author": "Jenny Wilson"
+  }
+  , {
+    "image": "BlogB",
+    "category": "Web Development",
+    "date": "May 27, 2023",
+    "title": "Mastering Front-End Development: Essential HTML, CSS, and JavaScript Skills",
+    "author": "John Doe"
+  },
+  {
+    "image": "BlogC",
+    "category": "Web Development",
+    "date": "May 27, 2023",
+    "title": "Mastering Front-End Development: Essential HTML, CSS, and JavaScript Skills",
+    "author": "John Doe"
+  },
+  {
+    "image": "BlogD",
+    "category": "Web Development",
+    "date": "May 27, 2023",
+    "title": "Mastering Front-End Development: Essential HTML, CSS, and JavaScript Skills",
+    "author": "John Doe"
+  }
 ]
