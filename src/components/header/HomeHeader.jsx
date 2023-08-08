@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 
-
+import hero from "../../assets/hero.png"
 import Button from "../button/Button";
 const HomeHeader = () => {
   return (
-    <header className="flex  flex-col-reverse md:flex-row items-center justify-between mb-8 md:flex-row gap-8">
+    <header className="flex  flex-col-reverse items-center justify-between mb-8 md:flex-row gap-8">
       <div className="flex-1 flex flex-col text-center md:text-start gap-6">
         <h1 className="font-bold text-darkblue text-3xl md:text-5xl leading-snug">
           Unleash Your <span className="text-yellow">Creativity</span> and Make
@@ -22,9 +22,7 @@ const HomeHeader = () => {
           width="mx-auto md:mx-0 w-[180px]"
         />
       </div>
-      <div className="flex-1 w-full">
-        
-     </div>
+    <img src={hero} alt="hero" className="flex-1 h-[400px] object-contain" />
     </header>
   );
 };
