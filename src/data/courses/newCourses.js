@@ -1,11 +1,8 @@
 import Photoshop from "../../assets/photoshop.png";
 import Business from "../../assets/Business.png";
 import BusinessTwo from "../../assets/Business 2.png";
-import Development from "../../assets/development.png";
-import marketing from "../../assets/Design 1.png";
-import photoshopTwo from "../../assets/Photography 2.png";
 
-const allCourses = [
+const courses = [
   {
     id: 1,
     title: "Photoshop Master Course: From Beginner to Expert",
@@ -52,32 +49,32 @@ const allCourses = [
     rating: "(4.2)",
     price: "N 27,000",
     discount: "20% Off",
-    image: photoshopTwo,
+    image: Photoshop,
   },
   {
     id: 5,
     title: "How to Budget and Forecast Your Business",
-    category: "Marketing",
+    category: "Business",
     badge: "Bestseller",
     initialPrice: false,
     tutor: "Wade Warren",
     rating: "(4,760)",
     price: "N 20,000",
     discount: false,
-    image: marketing,
+    image: Business,
   },
   {
     id: 6,
-    title: "Web Development Masterclass & Certifcation",
-    category: "Development",
+    title: "How to Budget and Forecast Your Business",
+    category: "Business",
     badge: "Bestseller",
-    initialPrice: "N 30,000",
-    tutor: "Albert Flores",
-    rating: "(4.8)",
-    price: "N 15,000",
-    discount: "50% Off",
-    image: Development,
+    initialPrice: false,
+    tutor: "Wade Warren",
+    rating: "(4,760)",
+    price: "N 20,000",
+    discount: false,
+    image: BusinessTwo,
   },
 ];
 
-export default allCourses;
+export default courses;

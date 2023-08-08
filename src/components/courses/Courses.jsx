@@ -1,12 +1,28 @@
-import courses from "../../data/courses/newCourses";
+import { useState } from "react";
+import allCourses from "../../data/courses/courses";
+import Button from "../button/Button";
+const Courses = () => {
+  const [courses, setcourses] = useState(allCourses);
 
-const NewCourses = () => {
+  const filterCategory = (category) => {
+    setcourses(allCourses.filter((course) => course.category === category));
+  };
   return (
-    <section className="mt-20 md:mt-40 mb-20">
-      <h1 className="text-3xl md:text-4xl font-bold text-blue text-center">
-        Expand Your <span className="text-yellow">Knowledge</span> with Our
-        Newly Added Courses
-      </h1>
+    <section className="mb-20">
+      <div className="flex flex-col md:flex-row  gap-10 justify-between">
+        <h1 className="font-bold text-3xl md:text-4xl text-blue">
+          Popular <span className="text-yellow">Courses</span>
+        </h1>
+        <div className="bg-[#E6EFFE] flex flex-wrap items-center gap-4 py-3 px-2 rounded-2xl">
+          <Button value="All" url="" onClick={() => setcourses(allCourses)} />
+         <button onClick={() => filterCategory("Design")}>Design</button>
+<button onClick={() => filterCategory("Development")}>Development</button>
+<button onClick={() => filterCategory("Business")}>Business</button>
+<button onClick={() => filterCategory("Marketing")}>Marketing</button>
+<button onClick={() => filterCategory("Data Science")}>Data Science</button>
+
+        </div>
+      </div>
 
       <main className="grid md:grid-cols-3 gap-8 mt-12">
         {courses.map((course) => (
@@ -37,7 +53,7 @@ const NewCourses = () => {
                 </div>
               </div>
               <div className="flex items-center justify-between">
-                <div className="flex gap-2 items-center">
+                <div className="flex flex-wrap gap-2 items-center">
                   <h4 className="text-lg font-bold text-darkblue">
                     {course.price}
                   </h4>
@@ -56,4 +72,4 @@ const NewCourses = () => {
   );
 };
 
-export default NewCourses;
+export default Courses;
