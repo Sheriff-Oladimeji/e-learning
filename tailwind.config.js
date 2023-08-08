@@ -11,6 +11,9 @@ export default {
         darkslateblue: "#353F50",
         lightslateblue: "#555E6C",
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],
