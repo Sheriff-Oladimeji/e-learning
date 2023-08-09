@@ -1,5 +1,6 @@
-
 import { useState } from "react";
+import Button from "../button/Button";
+import logo from "../../assets/Logo.png"
 import { Link } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
@@ -29,8 +30,7 @@ const links = [
 ];
 
 
-import Button from "../button/Button";
-import logo from "../../assets/logo.png"
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleNav = () => {
