@@ -10,6 +10,7 @@ export default {
         brown: "#AC5415",
         darkslateblue: "#353F50",
         lightslateblue: "#555E6C",
+        midnightBlue: "#033484",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

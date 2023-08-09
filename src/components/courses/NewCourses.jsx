@@ -3,7 +3,7 @@ import courses from "../../data/courses/newCourses";
 const NewCourses = () => {
   return (
     <section className="mt-20 md:mt-40 mb-20">
-      <h1 className="text-3xl md:text-4xl font-bold text-blue text-center">
+      <h1 className="text-3xl md:text-4xl font-bold text-midnightBlue text-center">
         Expand Your <span className="text-yellow">Knowledge</span> with Our
         Newly Added Courses
       </h1>

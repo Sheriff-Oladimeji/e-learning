@@ -10,7 +10,7 @@ const Courses = () => {
   return (
     <section className="mb-20">
       <div className="flex flex-col md:flex-row  gap-10 justify-between">
-        <h1 className="font-bold text-3xl md:text-4xl text-blue">
+        <h1 className="font-bold text-3xl md:text-4xl text-midnightBlue">
           Popular <span className="text-yellow">Courses</span>
         </h1>
         <div className="bg-[#E6EFFE] flex flex-wrap items-center gap-4 py-3 px-2 rounded-2xl">
