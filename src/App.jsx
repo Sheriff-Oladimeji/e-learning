@@ -15,6 +15,7 @@ import Courses from "./pages/courses/Coures";
 import Login from "./pages/auth/login/Login";
 import SignUp from "./pages/auth/signup/SignUp";
 import Contact from "./pages/contact/Contact";
+import NotFound from "./pages/404/NotFound";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
@@ -28,7 +29,7 @@ const router = createBrowserRouter(
       <Route path="auth/signup" element={<SignUp />} />
       <Route path="template" element={<Template />} />
       <Route path="contact" element={<Contact />} />
-      
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );

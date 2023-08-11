@@ -4,15 +4,14 @@ import ArticleCard from '../../components/Blog/article-card'
 
 const Blog = () => {
   return (
-    <main className=' md:mt-4 w-[90%] mx-auto'>
-     <div>
-     
-     <img className='hidden md:block' src={HeraderImg} alt="" />
-     <BlogCard />
-     <ArticleCard />
-     </div>
+    <main className="mt-28 md:mt-6 w-[90%] mx-auto">
+      <div>
+        <img src={HeraderImg} alt="" />
+        <BlogCard />
+        <ArticleCard />
+      </div>
     </main>
-  )
+  );
 }
 
 export default Blog
