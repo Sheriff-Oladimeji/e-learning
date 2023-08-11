@@ -31,11 +31,11 @@ const BlogCard = () => {
         </div>
   
         <div className="mx-auto w-full">
-          <div className="grid sm:grid-cols-2  md:grid-cols-3 mx-auto gap-6 my-8">
+          <div className="grid sm:grid-cols-2   md:grid-cols-3 mx-auto gap-6 my-8">
             {blogData.map((blog, index) => (
               <div
                 key={index}
-                className="bg-white shadow-md items-center rounded-lg max-w-xs"
+                className="bg-white shadow-md items-center rounded-lg md:max-w-xs w-full"
               >
                 <a href="#" className="h-[200px] overflow-hidden">
                   <img

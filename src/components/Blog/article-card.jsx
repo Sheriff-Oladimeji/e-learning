@@ -35,7 +35,7 @@ const ArticleCard = () =>{
             {articleData.map((blog, index) => (
               <div
                 key={index}
-                className="bg-white shadow-md items-center rounded-lg max-w-xs"
+                className="bg-white shadow-md items-center rounded-lg md:max-w-xs w-full"
               >
                 <a href="#" className="h-[200px] overflow-hidden">
                   <img
