@@ -6,7 +6,8 @@ const Blog = () => {
   return (
     <main className=' md:mt-4 w-[90%] mx-auto'>
      <div>
-     <img src={HeraderImg} alt="" />
+     
+     <img className='hidden md:block' src={HeraderImg} alt="" />
      <BlogCard />
      <ArticleCard />
      </div>
