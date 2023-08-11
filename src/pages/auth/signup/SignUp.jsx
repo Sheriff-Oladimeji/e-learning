@@ -1,5 +1,7 @@
 
 
+import googleIcon from '../../../assets/Icons.png'
+import appleIcon from '../../../assets/Icons (1).png'
 const SignUp = () => {
   return (
     <div className="flex justify-center items-center my-12">
@@ -10,15 +12,19 @@ const SignUp = () => {
           <div><p className="text-[#055FF0] font-semibold text-lg">Login</p></div>
         </div>
         <div className="flex justify-center gap-5 py-2">
-          <div className="border border-[#B1B5BB] p-3 rounded-xl">
-            <div></div>
-            <div><h1 className="font-bold text-lg">Google</h1></div>
-          </div>
-          <div className="border border-[#B1B5BB] p-3 rounded-xl">
-            <div></div>
-            <div><h1 className="font-bold text-lg">Apple</h1></div>
-          </div>
-        </div>
+                    <div className="border flex gap-2 items-center border-[#B1B5BB] p-3 rounded-xl">
+                        <div>
+                            <img src={googleIcon} alt="" />
+                        </div>
+                        <div><h1 className=" text-lg">Google</h1></div>
+                    </div>
+                    <div className="border flex gap-2 items-center border-[#B1B5BB] p-3 rounded-xl">
+                        <div>
+                            <img src={appleIcon} alt="" />
+                        </div>
+                        <div><h1 className=" text-lg">Apple</h1></div>
+                    </div>
+                </div>
         <div className="flex justify-center"><p className="text-[#8B919A]">Or sign up with</p></div>
         <div className="p-3">
           <div className="p-3">
