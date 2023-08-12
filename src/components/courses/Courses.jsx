@@ -1,7 +1,11 @@
 import { useState } from "react";
 import allCourses from "../../data/courses/courses";
 import Button from "../button/Button";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cartSlice";
+
 const Courses = () => {
+  const dispatch = useDispatch()
   const [courses, setCourses] = useState(allCourses);
 
    const [selectedCategory, setSelectedCategory] = useState("All"); // Initialize with 'All'
@@ -107,7 +111,8 @@ const Courses = () => {
                     <small className="text-xs">{course.discount}</small>
                   )}
                 </div>
-                <button className="bg-none outline-none border-none text-blue font-semibold">
+                <button className="bg-none outline-none border-none text-blue font-semibold"
+               >
                   Add to Cart
                 </button>
               </div>
