@@ -2,7 +2,9 @@ import { useState } from "react";
 import allCourses from "../../data/courses/courses";
 import Button from "../button/Button";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../features/cartSlice";
+import { addToCart } from "../../features/cart";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Courses = () => {
   const dispatch = useDispatch()
@@ -111,11 +113,26 @@ const Courses = () => {
                     <small className="text-xs">{course.discount}</small>
                   )}
                 </div>
-                <button className="bg-none outline-none border-none text-blue font-semibold"
-               >
+                <button
+                  className="bg-none outline-none border-none text-blue font-semibold"
+                  onClick={() => {
+                    dispatch(addToCart(course));
+                     toast.success("Item added to cart", {
+                       position: "top-center",
+                       autoClose: 5000,
+                       hideProgressBar: true,
+                       closeOnClick: true,
+                       pauseOnHover: true,
+                       draggable: true,
+                       progress: undefined,
+                       theme: "light",
+                     });
+                  }}
+                >
                   Add to Cart
                 </button>
               </div>
+              <ToastContainer />
             </div>
           </div>
         ))}

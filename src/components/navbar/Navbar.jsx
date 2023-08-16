@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+
 const links = [
   {
     id: 1,
@@ -32,6 +33,7 @@ const links = [
 
 
 const Navbar = () => {
+  
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
@@ -59,8 +61,11 @@ const Navbar = () => {
           <Link to="/search">
             <GoSearch size={25} />
           </Link>
-          <Link to="/cart">
+          <Link to="/cart" className="relative">
             <BsCart3 size={25} />
+            <span className="absolute -top-2 left-4 rounded-full bg-blue p-0.5 px-2 text-sm text-red-50 ">
+              0
+            </span>
           </Link>
 
           <Link
@@ -81,8 +86,11 @@ const Navbar = () => {
           <Link to="/search">
             <GoSearch size={30} />
           </Link>
-          <Link to="/cart">
-            <BsCart3 size={30} />
+          <Link to="/cart" className="relative">
+            <BsCart3 size={25} />
+            <span className="absolute -top-2 left-4 rounded-full bg-blue p-0.5 px-2 text-sm text-red-50 ">
+              0
+            </span>
           </Link>
           <button onClick={handleNav}>
             {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
@@ -123,7 +131,7 @@ const Navbar = () => {
             url="/auth/signup"
             value="Sign Up"
             width="w-[120px]"
-           onClick={handleNav}
+            onClick={handleNav}
           />
         </div>
       </div>
