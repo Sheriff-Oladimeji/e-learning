@@ -74,12 +74,12 @@ const About = () => {
       <div className="mt-14 flex flex-col md:flex-row justify-between items-center  gap-20 md:gap-48">
         <img src={double} alt="" className="h-[500px] object-contain" />
         <div className="flex flex-col gap-8  ">
-          <h2 className="font-semibold text-2xl md:text-3xl text-darkslateblue">
+          <h2 className="font-semibold text-2xl md:text-3xl text-darkslateblue text-center md:text-start">
             Embrace <span className="text-yellow">Limitless</span> Learning
-            Opportunities, Accessible Anytime and{" "}
+            Opportunities, Accessible Anytime and
             <span className="text-yellow">Anywhere</span>.
           </h2>
-          <p className="text-lightslateblue text-xl">
+          <p className="text-lightslateblue text-center md:text-start text-xl">
             Elevate your skills through our exceptional platform, featuring
             world-class courses, certificates, and a vast repository of online
             knowledge
@@ -88,7 +88,7 @@ const About = () => {
             {features.map((feature) => (
               <div
                 key={feature.id}
-                className="flex justify-center flex-wrap  md:flex-nowrap gap-3 items-center"
+                className="flex justify-center flex-col md:flex-row gap-3 items-center"
               >
                 <span className="bg-[#E6EFFE] p-2 rounded-full text-[#BD5C17]">
                   {feature.icon}
