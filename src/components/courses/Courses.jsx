@@ -1,5 +1,5 @@
 import { useState } from "react";
-import allCourses from "../../data/courses/courses";
+import { allCourses } from "../../data/courses/home";
 import Button from "../button/Button";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart";

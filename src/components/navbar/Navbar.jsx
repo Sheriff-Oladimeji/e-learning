@@ -1,16 +1,44 @@
 import { useState } from "react";
 import Button from "../button/Button";
-import logo from "../../assets/Logo.png"
+import logo from "../../assets/Logo.png";
 import { Link } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const links = [
   {
     id: 1,
     title: "Courses",
-    url: "/courses",
+    url: false,
+    subLinks: [
+      {
+        id: 1,
+        title: "Development",
+        url: "/courses/development",
+      },
+      {
+        id: 2,
+        title: "Design",
+        url: "/courses/design",
+      },
+      {
+        id: 3,
+        title: "Business",
+        url: "/courses/business",
+      },
+      {
+        id: 4,
+        title: "IT & Software",
+        url: "/courses/it&software",
+      },
+      {
+        id: 5,
+        title: "Marketing",
+        url: "/courses/marketing",
+      },
+    ],
   },
   {
     id: 2,
@@ -30,14 +58,41 @@ const links = [
   },
 ];
 
-
-
 const Navbar = () => {
-  
   const [nav, setNav] = useState(false);
+  const [openSubLinks, setOpenSubLinks] = useState({});
   const handleNav = () => {
     setNav(!nav);
   };
+  const handleSubLinkToggle = (linkId) => {
+    setOpenSubLinks((prevState) => ({
+      ...prevState,
+      [linkId]: !prevState[linkId],
+    }));
+  };
+
+  const renderSubLinks = (subLinks, linkId) => {
+    if (openSubLinks[linkId]) {
+      return (
+        <div className="absolute -left-4 mt-2  bg-white flex flex-col gap-6 py-4 shadow-2xl z-50 px-4 md:rounded-xl ">
+          <span>Categories</span>
+          {subLinks.map((subLink) => (
+            <Link
+              key={subLink.id}
+              to={subLink.url}
+              className="font-semibold flex justify-between items-center gap-4"
+              onClick={handleNav}
+            >
+              {subLink.title}
+              <MdKeyboardArrowRight />
+            </Link>
+          ))}
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <nav className="py-4 fixed top-0 left-0 z-50 w-full bg-white shadow-md md:shadow-none md:relative h-20">
       <div className="hidden md:flex w-[90%] mx-auto  justify-between items-center">
@@ -45,15 +100,28 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
         </Link>
 
-        <div className="flex items-center gap-10 text-lightslateblue ">
+        <div className="flex items-center gap-10 text-lightslateblue">
           {links.map((link) => (
-            <Link
-              key={link.id}
-              to={link.url}
-              className="font-semibold text-lightslateblue"
-            >
-              {link.title}
-            </Link>
+            <div key={link.id} className="relative">
+              {link.id === 1 ? (
+                <>
+                  <span
+                    className="font-semibold text-lightslateblue cursor-pointer"
+                    onClick={() => handleSubLinkToggle(link.id)}
+                  >
+                    {link.title}
+                  </span>
+                  {link.subLinks && renderSubLinks(link.subLinks, link.id)}
+                </>
+              ) : (
+                <Link
+                  to={link.url}
+                  className="font-semibold text-lightslateblue"
+                >
+                  {link.title}
+                </Link>
+              )}
+            </div>
           ))}
         </div>
 
@@ -109,14 +177,27 @@ const Navbar = () => {
         </Link>
         <div className="flex flex-col gap-10 z-50 pt-12 ">
           {links.map((link) => (
-            <Link
-              to={link.url}
-              className="text-[20px]"
-              key={link.id}
-              onClick={handleNav}
-            >
-              {link.title}
-            </Link>
+            <div key={link.id} className="relative">
+              {link.id === 1 ? (
+                <>
+                  <span
+                    className="font-semibold text-lightslateblue cursor-pointer"
+                    onClick={() => handleSubLinkToggle(link.id)}
+                  >
+                    {link.title}
+                  </span>
+                  {link.subLinks && renderSubLinks(link.subLinks, link.id)}
+                </>
+              ) : (
+                <Link
+                  to={link.url}
+                  className="font-semibold text-lightslateblue"
+                  onClick={handleNav}
+                >
+                  {link.title}
+                </Link>
+              )}
+            </div>
           ))}
         </div>
         <div className="flex gap-8  flex-col mt-6">

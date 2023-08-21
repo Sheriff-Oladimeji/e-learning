@@ -11,11 +11,15 @@ import RootLayout from "./layouts/RootLayout";
 import Checkout from "./pages/checkout/Checkout";
 import Search from "./pages/search/Search";
 import Template from "./pages/template/Template";
-import Courses from "./pages/courses/Coures";
+
 import Login from "./pages/auth/login/Login";
 import SignUp from "./pages/auth/signup/SignUp";
 import Contact from "./pages/contact/Contact";
 import NotFound from "./pages/404/NotFound";
+import Development from "./pages/courses/development/Development";
+import Design from "./pages/courses/design/Design";
+import Marketing from "./pages/courses/marketing/Marketing";
+import Business from "./pages/courses/business/Business";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
@@ -24,7 +28,10 @@ const router = createBrowserRouter(
       <Route path="cart" element={<Cart />} />
       <Route path="checkout" element={<Checkout />} />
       <Route path="search" element={<Search />} />
-      <Route path="courses" element={<Courses />} />
+    <Route path="courses/development" element={<Development />} />
+    <Route path="courses/design" element={<Design/>} />
+    <Route path="courses/marketing" element={<Marketing />} />
+    <Route path="courses/business" element={<Business/>} />
       <Route path="auth/login" element={<Login />} />
       <Route path="auth/signup" element={<SignUp />} />
       <Route path="template" element={<Template />} />

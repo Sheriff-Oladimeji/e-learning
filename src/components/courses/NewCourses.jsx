@@ -1,4 +1,4 @@
-import courses from "../../data/courses/newCourses";
+import { newCourses } from "../../data/courses/home";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart";
 import { ToastContainer, toast } from "react-toastify";
@@ -13,7 +13,7 @@ const NewCourses = () => {
       </h1>
 
       <main className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
-        {courses.map((course) => (
+        {newCourses.map((course) => (
           <div
             key={course.id}
             className="border rounded-lg shadow-lg  duration-300"
