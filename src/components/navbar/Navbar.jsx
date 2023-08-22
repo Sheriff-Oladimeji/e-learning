@@ -74,7 +74,8 @@ const Navbar = () => {
   const renderSubLinks = (subLinks, linkId) => {
     if (openSubLinks[linkId]) {
       return (
-        <div className="absolute -left-4 mt-2  bg-white flex flex-col gap-6 py-4 shadow-2xl z-50 px-4 md:rounded-xl ">
+        <div className="absolute 
+        -left-4 mt-2  bg-white flex flex-col gap-6 py-4 shadow-2xl z-50 px-4 md:rounded-xl ">
           <span>Categories</span>
           {subLinks.map((subLink) => (
             <Link
