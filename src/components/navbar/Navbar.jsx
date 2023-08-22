@@ -60,22 +60,24 @@ const links = [
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [openSubLinks, setOpenSubLinks] = useState({});
+  const [openSubLinks, setOpenSubLinks] = useState(false);
   const handleNav = () => {
     setNav(!nav);
   };
-  const handleSubLinkToggle = (linkId) => {
-    setOpenSubLinks((prevState) => ({
-      ...prevState,
-      [linkId]: !prevState[linkId],
-    }));
-  };
 
-  const renderSubLinks = (subLinks, linkId) => {
-    if (openSubLinks[linkId]) {
+  const handleDropDown = () => {
+    setOpenSubLinks(!openSubLinks)
+  }
+
+  const renderSubLinks = (subLinks) => {
+    if (openSubLinks) {
       return (
-        <div className="absolute 
-        -left-4 mt-2  bg-white flex flex-col gap-6 py-4 shadow-2xl z-50 px-4 md:rounded-xl ">
+        <div
+          className={`md:absolute  left-0
+        md:-left-4  mt-2  bg-white  flex-col gap-6 py-4 md:shadow-2xl md:z-50 md:px-4 md:rounded-xl  ${
+          openSubLinks ? "flex" : "hidden"
+        }`}
+        >
           <span>Categories</span>
           {subLinks.map((subLink) => (
             <Link
@@ -108,11 +110,11 @@ const Navbar = () => {
                 <>
                   <span
                     className="font-semibold text-lightslateblue cursor-pointer"
-                    onClick={() => handleSubLinkToggle(link.id)}
+                    onClick={handleDropDown}
                   >
                     {link.title}
                   </span>
-                  {link.subLinks && renderSubLinks(link.subLinks, link.id)}
+                  {renderSubLinks(link.subLinks)}
                 </>
               ) : (
                 <Link
@@ -176,19 +178,19 @@ const Navbar = () => {
         <Link to="/">
           <img src={logo} alt="logo" />
         </Link>
-        <div className="flex flex-col gap-10 z-50 pt-12 ">
+        <div className="flex flex-col gap-10  pt-12 ">
           {links.map((link) => (
             <div key={link.id} className="relative">
               {link.id === 1 ? (
-                <>
+                <div className="relative">
                   <span
                     className="font-semibold text-lightslateblue cursor-pointer"
-                    onClick={() => handleSubLinkToggle(link.id)}
+                    onClick={handleDropDown}
                   >
                     {link.title}
                   </span>
-                  {link.subLinks && renderSubLinks(link.subLinks, link.id)}
-                </>
+                  {renderSubLinks(link.subLinks)}
+                </div>
               ) : (
                 <Link
                   to={link.url}
