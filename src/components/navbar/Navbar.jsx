@@ -66,8 +66,8 @@ const Navbar = () => {
   };
 
   const handleDropDown = () => {
-    setOpenSubLinks(!openSubLinks)
-  }
+    setOpenSubLinks(!openSubLinks);
+  };
 
   const renderSubLinks = (subLinks) => {
     if (openSubLinks) {
@@ -78,12 +78,16 @@ const Navbar = () => {
           openSubLinks ? "flex" : "hidden"
         }`}
         >
-          <span>Categories</span>
+          <span
+            className="text-[#8B919A]"
+          >
+            Categories
+          </span>
           {subLinks.map((subLink) => (
             <Link
               key={subLink.id}
               to={subLink.url}
-              className="font-semibold flex justify-between items-center gap-4"
+              className="font-semibold flex justify-between items-center gap-4 text-darkslateblue"
               onClick={handleNav}
             >
               {subLink.title}
@@ -175,7 +179,7 @@ const Navbar = () => {
             : "md:hidden w-[50px] h-screen bg-white top-0 left-[-100%] fixed z-10 duration-500"
         }
       >
-        <Link to="/">
+        <Link to="/" onClick={handleNav}>
           <img src={logo} alt="logo" />
         </Link>
         <div className="flex flex-col gap-10  pt-12 ">
