@@ -1,5 +1,6 @@
 
 import header from "../../assets/Title Backgrounds (1).png"
+import AllTemplate from "../../components/Template Page/allTemplate"
 import Categories from "../../components/Template Page/categories"
 const Template = () => {
   return (
@@ -7,6 +8,7 @@ const Template = () => {
       <div>
         <img src={header} alt="" />
         <Categories />
+        <AllTemplate />
       </div>
 
     </main>
