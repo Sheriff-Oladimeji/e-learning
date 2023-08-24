@@ -1,5 +1,5 @@
 import About from "../../components/about/About"
-import Courses from "../../components/courses/Courses"
+import CoursesHome from "../../components/courses/CoursesHome"
 import NewCourses from "../../components/courses/NewCourses"
 import HomeHeader from "../../components/header/HomeHeader"
 
@@ -9,7 +9,7 @@ const Home = () => {
     <main className="mt-28 md:mt-6 w-[90%] mx-auto">
       <HomeHeader />
       <NewCourses />
-      <Courses />
+      <CoursesHome />
       <About/>
    </main>
   )
