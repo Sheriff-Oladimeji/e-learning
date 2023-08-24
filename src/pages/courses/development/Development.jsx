@@ -6,6 +6,10 @@ const buttons = [
     id: 1,
     title: "HTML5",
   },
+  {
+    id: 2,
+    title: "CSS3",
+  },
 ];
 const Development = () => {
   return (

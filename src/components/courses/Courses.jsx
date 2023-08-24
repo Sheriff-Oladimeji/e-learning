@@ -37,7 +37,7 @@ const Courses = ({ buttons, data,  category}) => {
         <h1 className="font-bold text-3xl md:text-4xl text-midnightBlue">
           {header}
         </h1>
-        <div className=" flex overflow-x-auto items-center gap-4 py-3 px-2 rounded-2xl font-semibold">
+        <div className=" flex  items-center gap-4 py-3 px-2 rounded-2xl font-semibold">
           <Button value="All" url="" onClick={() => setCourses(data)} />
           <button
             onClick={() => filterCategory("Popular")}

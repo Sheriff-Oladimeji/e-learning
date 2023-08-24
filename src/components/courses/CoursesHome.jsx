@@ -60,14 +60,7 @@ const CoursesHome = () => {
           >
             Marketing
           </button>
-          <button
-            onClick={() => filterCategory("Data Science")}
-            className={`${
-              selectedCategory === "Data Science" ? "bg-blue text-white" : ""
-            }  p-2 rounded-xl  border-none  text-center `}
-          >
-            Data Science
-          </button>
+         
         </div>
       </div>
 
