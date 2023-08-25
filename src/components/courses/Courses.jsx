@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-
+import bgImg from "../../assets/course-bg.png"
 import Button from "../button/Button";
 import { useState } from "react";
 
@@ -10,7 +10,7 @@ const Courses = ({ buttons, data,  category}) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [header, setHeader] = useState(category)
   const handleHeaderChange = (e) => {
-    setHeader(e.target.value)
+    setHeader(e.target.innerText)
   }
 
     const filterCategory = (category) => {
@@ -23,18 +23,24 @@ const Courses = ({ buttons, data,  category}) => {
     };
   return (
     <section>
-      {buttons.map((button) => {
-        <button
-          key={button.id}
-          onClick={handleHeaderChange}
-          className="py-2 px-3 border border-[#8B919A] text-center"
-        >
-          {button.title}
-        </button>;
-      })}
+      <img src={bgImg} alt=""  />
+      <div className="my-6 flex flex-col gap-6">
+        <h2 className="text-xl text-lightslateblue">In-Demand Skills</h2>
+        <div className="flex flex-wrap  gap-8 ">
+          {buttons.map((button) => (
+            <button
+              key={button.id}
+              className="py-2 px-3 border text-[15px] outline-none hover:active:outline-none text-black border-[#8B919A] text-center"
+              onClick={handleHeaderChange}
+            >
+              {button.title}
+            </button>
+          ))}
+        </div>
+      </div>
 
-      <div className="flex flex-col md:flex-row  gap-10 justify-between">
-        <h1 className="font-bold text-3xl md:text-4xl text-midnightBlue">
+      <div className="flex flex-col md:flex-row md:items-center gap-10 justify-between">
+        <h1 className="font-bold text-2xl md:text-3xl text-darkblue">
           {header}
         </h1>
         <div className=" flex  items-center gap-4 py-3 px-2 rounded-2xl font-semibold">
