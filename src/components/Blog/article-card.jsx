@@ -1,5 +1,5 @@
 import articleData from '../../data/blog/article.json'
-import BlogA from '../../assets/Blog 1.png';
+import BlogA from '../../assets/Blog 1.png'
 import BlogB from '../../assets/Business.png'
 import BlogC from '../../assets/Design 1.png'
 import BlogD from '../../assets/Design 2.png'
