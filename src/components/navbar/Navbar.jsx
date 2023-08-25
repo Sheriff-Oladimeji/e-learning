@@ -28,13 +28,9 @@ const links = [
         title: "Business",
         url: "/courses/business",
       },
+     
       {
         id: 4,
-        title: "IT & Software",
-        url: "/courses/it&software",
-      },
-      {
-        id: 5,
         title: "Marketing",
         url: "/courses/marketing",
       },
@@ -88,7 +84,10 @@ const Navbar = () => {
               key={subLink.id}
               to={subLink.url}
               className="font-semibold flex justify-between items-center gap-4 text-darkslateblue"
-              onClick={handleNav}
+              onClick={() => {
+                handleNav()
+                handleDropDown()
+              }}
             >
               {subLink.title}
               <MdKeyboardArrowRight />

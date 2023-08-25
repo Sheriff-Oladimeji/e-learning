@@ -7,19 +7,19 @@ const buttons = [
   },
   {
     id: 2,
-    title: "UI/UX",
+    title: "UI/UX Design",
   },
   {
     id: 3,
-    title: "Adobe",
+    title: "Digital Art",
   },
   {
     id: 4,
-    title: "Photography",
+    title: "Graphic Design",
   },
   {
     id: 5,
-    title: "Canva",
+    title: "Graphic Design",
   },
   {
     id: 6,
@@ -27,10 +27,12 @@ const buttons = [
   },
   {
     id: 7,
-    title: "Figma",
+    title: "Graphic Design",
   },
- 
- 
+  {
+    id: 8,
+    title: "Photography",
+  },
 ];
 const Design = () => {
   return (

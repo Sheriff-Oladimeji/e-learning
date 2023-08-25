@@ -1,5 +1,5 @@
 import Courses from "../../../components/courses/Courses";
-import { business } from "../../../data/courses/courses";
+import { marketing } from "../../../data/courses/courses";
 
 const buttons = [
   {
@@ -50,7 +50,7 @@ const buttons = [
 const Marketing = () => {
   return (
     <section className="mt-28 md:mt-6 w-[90%] mx-auto mb-20">
-      <Courses data={business} category="Marketing Courses" buttons={buttons} />
+      <Courses data={marketing} category="Marketing Courses" buttons={buttons} />
     </section>
   );
 };
