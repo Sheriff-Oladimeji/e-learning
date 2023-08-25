@@ -12,6 +12,9 @@ import designThree from "./Photography 2.png";
 import designFour from "./Design 1.png";
 import designFive from "./Design 2.png";
 import designSix from "./Design 3.png";
+import busOne from "./Business.png"
+import busTwo from "./Business 2.png"
+
 const developmentImg = {
   devEight,
   devFive,
@@ -26,5 +29,7 @@ const developmentImg = {
 const designImg = {
   designOne, designFive, designSix, designFour, designThree, designTwo, 
 }
-
-export {developmentImg, designImg}
+const businessImg = {
+  busOne, busTwo, designFour, designFive
+}
+export {developmentImg, designImg, businessImg}

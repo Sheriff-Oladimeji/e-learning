@@ -39,7 +39,7 @@ const Courses = ({ buttons, data,  category}) => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row  gap-10 justify-between">
+      <div className="flex flex-col md:flex-row md:items-center gap-10 justify-between">
         <h1 className="font-bold text-2xl md:text-3xl text-darkblue">
           {header}
         </h1>

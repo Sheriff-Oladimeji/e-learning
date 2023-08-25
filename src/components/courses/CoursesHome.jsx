@@ -26,7 +26,7 @@ const CoursesHome = () => {
         <h1 className="font-bold text-3xl md:text-4xl text-midnightBlue">
           Popular <span className="text-yellow">Courses</span>
         </h1>
-        <div className="bg-[#E6EFFE] overflow-x-scroll flex  items-center gap-4 py-3 px-2 rounded-2xl">
+        <div className="bg-[#E6EFFE] overflow-x-scroll md:overflow-x-hidden flex  items-center gap-4 py-3 px-2 rounded-2xl">
           <Button value="All" url="" onClick={() => setCourses(allCourses)} />
           <button
             onClick={() => filterCategory("Design")}

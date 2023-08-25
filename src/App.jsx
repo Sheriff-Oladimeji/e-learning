@@ -4,6 +4,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import { useEffect } from "react";
 import Home from "./pages/home/Home";
 import Blog from "./pages/blog/Blog";
 import Cart from "./pages/cart/Cart";
@@ -20,18 +21,30 @@ import Development from "./pages/courses/development/Development";
 import Design from "./pages/courses/design/Design";
 import Marketing from "./pages/courses/marketing/Marketing";
 import Business from "./pages/courses/business/Business";
+import { useLocation } from "react-router-dom";
+
+function ScrollToTopOnRouteChange() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
+      <Route element={<ScrollToTopOnRouteChange/>} />
       <Route index element={<Home />} />
       <Route path="blog" element={<Blog />} />
       <Route path="cart" element={<Cart />} />
       <Route path="checkout" element={<Checkout />} />
       <Route path="search" element={<Search />} />
-    <Route path="courses/development" element={<Development />} />
-    <Route path="courses/design" element={<Design/>} />
-    <Route path="courses/marketing" element={<Marketing />} />
-    <Route path="courses/business" element={<Business/>} />
+      <Route path="courses/development" element={<Development />} />
+      <Route path="courses/design" element={<Design />} />
+      <Route path="courses/marketing" element={<Marketing />} />
+      <Route path="courses/business" element={<Business />} />
       <Route path="auth/login" element={<Login />} />
       <Route path="auth/signup" element={<SignUp />} />
       <Route path="template" element={<Template />} />
