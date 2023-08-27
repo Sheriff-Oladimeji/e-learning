@@ -83,7 +83,7 @@ const Courses = ({ buttons, data,  category}) => {
         {courses.map((course) => (
           <div
             key={course.id}
-            className="border rounded-lg shadow-lg  duration-300"
+            className="border rounded-lg shadow-lg  "
           >
             <img
               src={course.image}
