@@ -49,12 +49,12 @@ const Cart = () => {
               {cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex flex-col md:flex-row bg-white  rounded-lg shadow-lg "
+                  className="flex flex-col md:flex-row bg-white rounded-lg md:rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] h-full"
                 >
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="rounded-t-lg md:rounded-l-lg md:w-[40%] object-cover "
+                    className="w-full rounded-t-lg max-h-[200px] md:max-h-[300px] md:rounded-none md:rounded-l-xl md:w-[40%] object-cover "
                   />
 
                   <div className="md:w-[70%] p-4 flex flex-col gap-3">
@@ -92,10 +92,10 @@ const Cart = () => {
                         <span>{item.rating}</span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4">
-                      <span>•   20 Lectures </span>
-                      <span>•   18 hours </span>
-                      <span>•    Beginners- Expert </span>
+                    <div className="flex items-center gap-4 flex-wrap text-lightslateblue">
+                      <span>• 20 Lectures </span>
+                      <span>• 18 hours </span>
+                      <span>• Beginners- Expert </span>
                     </div>
                   </div>
                 </div>
