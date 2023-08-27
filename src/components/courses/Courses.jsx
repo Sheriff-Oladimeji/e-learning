@@ -14,7 +14,16 @@ const Courses = ({ buttons, data,  category}) => {
   const [header, setHeader] = useState(category)
      const handleAddToCart = (course) => {
        dispatch(addToCart(course));
-       toast.success(`${course.title} added to cart`);
+      toast.success("Item added to cart", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
      };
   const handleHeaderChange = (e) => {
     setHeader(e.target.innerText)
@@ -81,10 +90,7 @@ const Courses = ({ buttons, data,  category}) => {
 
       <main className="grid sm:grid-cols-2 md:grid-cols-3 gap-14 mt-12">
         {courses.map((course) => (
-          <div
-            key={course.id}
-            className="border rounded-lg shadow-lg  "
-          >
+          <div key={course.id} className="border rounded-lg shadow-lg  ">
             <img
               src={course.image}
               alt={course.title}
@@ -139,10 +145,10 @@ const Courses = ({ buttons, data,  category}) => {
                 </button>
               </div>
             </div>
-            <ToastContainer />
           </div>
         ))}
       </main>
+      <ToastContainer />
     </section>
   );
 }

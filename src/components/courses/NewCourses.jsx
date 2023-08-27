@@ -7,7 +7,16 @@ const NewCourses = () => {
   const dispatch = useDispatch();
    const handleAddToCart = (course) => {
      dispatch(addToCart(course));
-     toast.success(`${course.title} added to cart`);
+   toast.success("Item added to cart", {
+     position: "top-right",
+     autoClose: 5000,
+     hideProgressBar: false,
+     closeOnClick: true,
+     pauseOnHover: true,
+     draggable: true,
+     progress: undefined,
+     theme: "light",
+   });
    };
   return (
     <section className="mt-20 md:mt-40 mb-20">
@@ -75,11 +84,11 @@ const NewCourses = () => {
                   Add to Cart
                 </button>
               </div>
-              <ToastContainer />
             </div>
           </div>
         ))}
       </main>
+      <ToastContainer />
     </section>
   );
 };

@@ -15,7 +15,16 @@ const CoursesHome = () => {
 
    const handleAddToCart = (course) => {
      dispatch(addToCart(course)); 
-     toast.success(`${course.title} added to cart`); 
+    toast.success("Item added to cart", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
    };
 
    const [selectedCategory, setSelectedCategory] = useState("All"); // Initialize with 'All'
@@ -130,11 +139,11 @@ const CoursesHome = () => {
                   Add to Cart
                 </button>
               </div>
-              <ToastContainer />
             </div>
           </div>
         ))}
       </main>
+      <ToastContainer />
     </section>
   );
 };
