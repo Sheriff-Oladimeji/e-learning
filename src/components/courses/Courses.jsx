@@ -2,13 +2,29 @@
 import bgImg from "../../assets/course-bg.png"
 import Button from "../button/Button";
 import { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cart";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Courses = ({ buttons, data,  category}) => {
     const [courses, setCourses] = useState(data);
-
+ const dispatch = useDispatch();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [header, setHeader] = useState(category)
+     const handleAddToCart = (course) => {
+       dispatch(addToCart(course));
+      toast.success("Item added to cart", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+     };
   const handleHeaderChange = (e) => {
     setHeader(e.target.innerText)
   }
@@ -23,7 +39,7 @@ const Courses = ({ buttons, data,  category}) => {
     };
   return (
     <section>
-      <img src={bgImg} alt=""  />
+      <img src={bgImg} alt="" />
       <div className="my-6 flex flex-col gap-6">
         <h2 className="text-xl text-lightslateblue">In-Demand Skills</h2>
         <div className="flex flex-wrap  gap-8 ">
@@ -74,10 +90,7 @@ const Courses = ({ buttons, data,  category}) => {
 
       <main className="grid sm:grid-cols-2 md:grid-cols-3 gap-14 mt-12">
         {courses.map((course) => (
-          <div
-            key={course.id}
-            className="border rounded-lg shadow-lg  duration-300"
-          >
+          <div key={course.id} className="border rounded-lg shadow-lg  ">
             <img
               src={course.image}
               alt={course.title}
@@ -103,18 +116,31 @@ const Courses = ({ buttons, data,  category}) => {
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap gap-2 items-center">
                   <h4 className="text-lg font-bold text-darkblue">
-                    N {course.price}
+                    {course.price.toLocaleString("en-NG", {
+                      style: "currency",
+                      currency: "NGN",
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0,
+                    })}
                   </h4>
                   {course.initialPrice && (
                     <span className="text-lightslateblue line-through text-sm ">
-                      N {course.initialPrice}
+                      {course.initialPrice.toLocaleString("en-NG", {
+                        style: "currency",
+                        currency: "NGN",
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      })}
                     </span>
                   )}
                   {course.discount && (
                     <small className="text-xs">{course.discount}% off</small>
                   )}
                 </div>
-                <button className="bg-none outline-none border-none text-blue font-semibold">
+                <button
+                  className="bg-none outline-none border-none text-blue font-semibold"
+                  onClick={() => handleAddToCart(course)}
+                >
                   Add to Cart
                 </button>
               </div>
@@ -122,6 +148,7 @@ const Courses = ({ buttons, data,  category}) => {
           </div>
         ))}
       </main>
+      <ToastContainer />
     </section>
   );
 }

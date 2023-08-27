@@ -6,6 +6,7 @@ import { BsCart3 } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 const links = [
   {
@@ -57,6 +58,7 @@ const links = [
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [openSubLinks, setOpenSubLinks] = useState(false);
+   const cartCount = useSelector((state) => state.cart.cartItems.length);
   const handleNav = () => {
     setNav(!nav);
   };
@@ -138,7 +140,7 @@ const Navbar = () => {
           <Link to="/cart" className="relative">
             <BsCart3 size={25} />
             <span className="absolute -top-2 left-4 rounded-full bg-blue p-0.5 px-2 text-sm text-red-50 ">
-              0
+              {cartCount}
             </span>
           </Link>
 
@@ -163,7 +165,7 @@ const Navbar = () => {
           <Link to="/cart" className="relative">
             <BsCart3 size={25} />
             <span className="absolute -top-2 left-4 rounded-full bg-blue p-0.5 px-2 text-sm text-red-50 ">
-              0
+             {cartCount}
             </span>
           </Link>
           <button onClick={handleNav}>
