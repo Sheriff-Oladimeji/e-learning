@@ -155,7 +155,7 @@ const newPrice = discountedPrices.reduce(
                 </span>
               </p>
               <p className="flex justify-between items-center">
-                Discount:
+                Total Price:
                 <span className="text-black font-semibold">
                   {totalPrice.toLocaleString("en-NG", {
                     style: "currency",
