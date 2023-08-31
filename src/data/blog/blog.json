@@ -1,12 +1,12 @@
  [{
-    "image": "BlogB",
+    "image": "BlogC",
     "category": "Web Development",
     "date": "May 27, 2023",
     "title": "Mastering Front-End Development: Essential HTML, CSS, and JavaScript Skills",
     "author": "Jenny Wilson"
   }
   , {
-    "image": "BlogB",
+    "image": "BlogD",
     "category": "Web Development",
     "date": "May 27, 2023",
     "title": "Mastering Front-End Development: Essential HTML, CSS, and JavaScript Skills",

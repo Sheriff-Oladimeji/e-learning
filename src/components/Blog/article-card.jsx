@@ -1,5 +1,5 @@
 import articleData from '../../data/blog/article.json'
-import BlogA from '../../assets/Blog 1.png';
+import BlogA from '../../assets/Blog 1.png'
 import BlogB from '../../assets/Business.png'
 import BlogC from '../../assets/Design 1.png'
 import BlogD from '../../assets/Design 2.png'
@@ -31,11 +31,11 @@ const ArticleCard = () =>{
         </div>
   
         <div className="mx-auto w-full">
-          <div className="grid sm:grid-cols-2  md:grid-cols-3 mx-auto gap-6 mt-8">
+          <div className="grid sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 mx-auto gap-6 mt-8">
             {articleData.map((blog, index) => (
               <div
                 key={index}
-                className="bg-white shadow-md items-center rounded-lg md:max-w-xs w-full"
+                className="bg-white shadow-md items-center rounded-lg  w-full"
               >
                 <a href="#" className="h-[200px] overflow-hidden">
                   <img
