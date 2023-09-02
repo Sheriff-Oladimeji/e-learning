@@ -38,7 +38,7 @@ const newPrice = discountedPrices.reduce(
       {cartItems.length === 0 ? (
         <div className="flex items-center flex-col justify-center mx-auto w-full md:w-[70%] mb-16">
           <div className="flex w-full justify-between items-center mb-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-darkblue">
+            <h2 className="text-2xl md:text-3xl fon]=t-bold text-darkblue">
               Shopping Cart
             </h2>
             <p className="text-[#8B919A] font-semibold">0 courses</p>
@@ -46,7 +46,7 @@ const newPrice = discountedPrices.reduce(
           <div className="flex flex-col gap-4 border border-[#E6E7E9] rounded-md w-full items-center pb-4 ">
             <img src={cart} alt="empty cart" className="w-[50%]" />
             <p className="text-center md:text-start">
-              Your cart is empty. It's time to fill it with knowledge! Browse
+              Your cart is empty. Its time to fill it with knowledge! Browse
               our courses and add items that interest you
             </p>
             <Button value="Browse Courses" url="/courses/development" />
