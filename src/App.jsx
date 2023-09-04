@@ -22,6 +22,7 @@ import Design from "./pages/courses/design/Design";
 import Marketing from "./pages/courses/marketing/Marketing";
 import Business from "./pages/courses/business/Business";
 import { useLocation } from "react-router-dom";
+import CourseTemDescription from "./components/Template Page/single";
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -42,6 +43,7 @@ const App = () => {
        <Navbar />
        <Routes>
          <Route index element={<Home />} />
+        
          <Route path="blog" element={<Blog />} />
          <Route path="cart" element={<Cart />} />
          <Route path="checkout" element={<Checkout />} />
@@ -53,6 +55,7 @@ const App = () => {
          <Route path="auth/login" element={<Login />} />
          <Route path="auth/signup" element={<SignUp />} />
          <Route path="template" element={<Template />} />
+         <Route path="/template/:courseId" component={<CourseTemDescription />} />
          <Route path="contact" element={<Contact />} />
          <Route path="*" element={<NotFound />} />
        </Routes>
