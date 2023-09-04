@@ -7,12 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AllTemplate = () => {
-<<<<<<< HEAD
-  
-  const dispatch = useDispatch()
-=======
   const dispatch = useDispatch();
->>>>>>> 90385d8828f5211f7702ca6a1025a31bc4e2d2eb
   const [courses, setCourses] = useState(allCourses);
 
   const [selectedCategory, setSelectedCategory] = useState("All"); // Initialize with 'All'
@@ -94,11 +89,7 @@ const AllTemplate = () => {
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap gap-2 items-center">
                   <h4 className="text-lg font-bold text-darkblue">
-<<<<<<< HEAD
-                  {course.price.toLocaleString("en-NG", {
-=======
                     {course.price.toLocaleString("en-NG", {
->>>>>>> 90385d8828f5211f7702ca6a1025a31bc4e2d2eb
                       style: "currency",
                       currency: "NGN",
                       minimumFractionDigits: 0,
@@ -113,11 +104,7 @@ const AllTemplate = () => {
                         minimumFractionDigits: 0,
                         maximumFractionDigits: 0,
                       })}
-<<<<<<< HEAD
-                  </span>
-=======
                     </span>
->>>>>>> 90385d8828f5211f7702ca6a1025a31bc4e2d2eb
                   )}
                   {course.discount && (
                     <small className="text-xs">{course.discount}% off</small>
