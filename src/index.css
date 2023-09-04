@@ -14,3 +14,13 @@
 }
 }
 
+.input{
+  @apply p-2 rounded-lg border border-[#B1B5BB]  active:hover:outline-none outline-none;
+}
+.form-control{
+  @apply flex flex-col gap-2;
+}
+.label{
+  @apply text-lightslateblue;
+}
+
