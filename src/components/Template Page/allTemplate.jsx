@@ -8,7 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 const AllTemplate = () => {
   
-  const dispatch = useDispatch()
+ 
+  const dispatch = useDispatch();
   const [courses, setCourses] = useState(allCourses);
 
   const [selectedCategory, setSelectedCategory] = useState("All"); // Initialize with 'All'
