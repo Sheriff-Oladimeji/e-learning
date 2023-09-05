@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import payment from "../../assets/payment.png"
 import Button from "../../components/button/Button";
 
+
 const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const initialPrice = cartItems.reduce((total, item) => {
@@ -22,7 +23,7 @@ const Checkout = () => {
   return (
     <section className="mt-28 md:mt-6 w-[90%] md:w-[80%] mx-auto mb-20">
       <h1 className="font-bold text-3xl text-darkblue">Checkout</h1>
-      <div className="flex flex-col md:flex-row justify-between md:items-center gap-8 md:gap-48 w-full">
+      <div className="flex flex-col md:flex-row justify-between  gap-8 md:gap-48 w-full">
         <main className="flex-1  flex flex-col gap-3">
           <h3 className="text-xl text-lightslateblue font-semibold">
             Personal Details
@@ -75,15 +76,111 @@ const Checkout = () => {
             </div>
             <div className="input flex justify-between items-center">
               <span className="flex items-center">
-                <input type="radio" name="" id="" className="input"  checked/>
+                <input type="radio" name="" id="" className="input" checked />
                 <span>💳card</span>
               </span>
               <img src={payment} alt="" />
             </div>
+            <div className="form-control">
+              <label htmlFor="name" className="label">
+                Name on Card
+              </label>
+              <input
+                type="text"
+                name="name"
+                id=""
+                className="input"
+                placeholder="Name on Card"
+              />
+            </div>
+            <div className="form-control">
+              <label htmlFor="number" className="label">
+                Card Number
+              </label>
+              <input
+                type="number"
+                name="number"
+                id=""
+                className="input"
+                placeholder="Card Number"
+              />
+            </div>
+            <div className="flex flex-row items-center justify-between">
+              <div className="form-control w-[50%]">
+                <label htmlFor="date" className="label">
+                  Expiration date
+                </label>
+                <input
+                  type="text"
+                  name="date"
+                  id=""
+                  className="input"
+                  placeholder="MM/YY"
+                />
+              </div>
+              <div className="form-control w-[30%] ">
+                <label htmlFor="CVV" className="label">
+                  CVV
+                </label>
+                <input
+                  type="number"
+                  name="CVV"
+                  id=""
+                  className="input"
+                  placeholder="123"
+                />
+              </div>
+            </div>
           </form>
         </main>
-        <aside className="flex-1 mt-20 md:mt-0">
-          <div className="border border-[#E6E7E9] rounded-lg p-4 flex flex-col gap-3 text-[#8B919A]">
+        <aside className="flex-1  flex flex-col gap-3">
+          <h3 className="text-xl text-lightslateblue font-semibold">
+            Course Order Details
+          </h3>
+
+          <div className="flex flex-col gap-8">
+            {cartItems.map((item) => (
+              <div
+                key={item.id}
+                className="relative md:flex items-center gap-4"
+              >
+                <div className="flex flex-col md:flex-row bg-white rounded-lg md:rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] h-full">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full rounded-t-lg max-h-[200px] md:max-h-[300px] md:rounded-none md:rounded-l-xl md:w-[40%] object-cover "
+                  />
+
+                  <div className="md:w-[70%] p-4 flex flex-col gap-3">
+                    <h2 className="text-sm text-lightslateblue">
+                      {item.title}
+                    </h2>
+                    <div className="flex items-center gap-4">
+                      <h4 className="text-lg font-bold text-darkblue">
+                        {item.price.toLocaleString("en-NG", {
+                          style: "currency",
+                          currency: "NGN",
+                          minimumFractionDigits: 0,
+                          maximumFractionDigits: 0,
+                        })}
+                      </h4>
+                      {item.initialPrice && (
+                        <p className="text-lightslateblue line-through text-sm ">
+                          {item.initialPrice.toLocaleString("en-NG", {
+                            style: "currency",
+                            currency: "NGN",
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0,
+                          })}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="border border-[#E6E7E9] rounded-lg p-4 flex flex-col gap-3 text-[#8B919A] mt-8">
             <h4 className="text-center">Summary</h4>
             <p className="flex justify-between items-center">
               Initial Price:

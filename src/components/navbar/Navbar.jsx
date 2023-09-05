@@ -176,7 +176,7 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "md:hidden w-[60%] h-screen bg-white top-0 left-0 fixed z-10 duration-500 px-8 py-8"
+            ? "md:hidden w-[60%] h-screen bg-white top-0 left-0 fixed z-10 duration-500 px-8 py-8 shadow-xl"
             : "md:hidden w-[50px] h-screen bg-white top-0 left-[-100%] fixed z-10 duration-500"
         }
       >
