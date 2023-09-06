@@ -55,7 +55,11 @@ const App = () => {
          <Route path="auth/login" element={<Login />} />
          <Route path="auth/signup" element={<SignUp />} />
          <Route path="template" element={<Template />} />
-         <Route path="/template/:courseId" component={<CourseTemDescription />} />
+         <Route
+  path="/template/:courseId"
+ element= {<CourseTemDescription />}
+/>
+
          <Route path="contact" element={<Contact />} />
          <Route path="*" element={<NotFound />} />
        </Routes>
