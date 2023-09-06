@@ -56,9 +56,9 @@ const App = () => {
          <Route path="auth/signup" element={<SignUp />} />
          <Route path="template" element={<Template />} />
          <Route
-  path="/template/:courseId"
- element= {<CourseTemDescription />}
-/>
+            path="/template/:courseId"
+          element= {<CourseTemDescription />}
+          />
 
          <Route path="contact" element={<Contact />} />
          <Route path="*" element={<NotFound />} />
