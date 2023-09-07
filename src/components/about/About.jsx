@@ -88,7 +88,7 @@ const About = () => {
             {features.map((feature) => (
               <div
                 key={feature.id}
-                className="flex justify-center flex-col md:flex-row gap-3 items-center"
+                className="flex justify-center flex-col lg:flex-row gap-3 items-center"
               >
                 <span className="bg-[#E6EFFE] p-2 rounded-full text-[#BD5C17]">
                   {feature.icon}
