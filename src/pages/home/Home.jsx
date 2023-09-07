@@ -2,6 +2,7 @@ import About from "../../components/about/About"
 import CoursesHome from "../../components/courses/CoursesHome"
 import NewCourses from "../../components/courses/NewCourses"
 import HomeHeader from "../../components/header/HomeHeader"
+import Testimonials from "../../components/testimonial/Testimonials"
 
 
 const Home = () => {
@@ -10,7 +11,8 @@ const Home = () => {
       <HomeHeader />
       <NewCourses />
       <CoursesHome />
-      <About/>
+      <About />
+      <Testimonials/>
    </main>
   )
 }

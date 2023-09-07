@@ -14,6 +14,16 @@
 }
 }
 
+.scroll {
+      overflow-x: scroll;
+      scrollbar-width: none; 
+      -ms-overflow-style: none; 
+    }
+
+    .scroll::-webkit-scrollbar {
+      display: none; 
+    }
+
 .input{
   @apply p-2 rounded-lg border border-[#B1B5BB]  active:hover:outline-none outline-none;
 }
