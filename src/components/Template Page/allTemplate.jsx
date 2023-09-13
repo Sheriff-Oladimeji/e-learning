@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { Link } from "react-router-dom";
 const AllTemplate = () => {
   
  
@@ -32,25 +32,22 @@ const AllTemplate = () => {
           <Button value="All" url="" onClick={() => setCourses(allCourses)} />
           <button
             onClick={() => filterCategory("Popular")}
-            className={`${
-              selectedCategory === "Popular" ? "bg-blue text-white" : ""
-            }  p-2 rounded-xl   border-none  text-center `}
+            className={`${selectedCategory === "Popular" ? "bg-blue text-white" : ""
+              }  p-2 rounded-xl   border-none  text-center `}
           >
             Popular
           </button>
           <button
             onClick={() => filterCategory("New")}
-            className={`${
-              selectedCategory === "New" ? "bg-blue text-white" : ""
-            }  p-2 rounded-xl px-6   border-none  text-center `}
+            className={`${selectedCategory === "New" ? "bg-blue text-white" : ""
+              }  p-2 rounded-xl px-6   border-none  text-center `}
           >
             New
           </button>
           <button
             onClick={() => filterCategory("Price")}
-            className={`${
-              selectedCategory === "Price" ? "bg-blue text-white" : ""
-            }  p-2 rounded-xl   border-none  text-center `}
+            className={`${selectedCategory === "Price" ? "bg-blue text-white" : ""
+              }  p-2 rounded-xl   border-none  text-center `}
           >
             Price
           </button>
@@ -75,9 +72,8 @@ const AllTemplate = () => {
                   {course.badge}
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-darkblue">
-                {course.title}
-              </h3>
+              <Link className="text-xl font-bold text-darkblue" to={`/template/${course.id}`}>{course.title}</Link>
+
               <div>
                 <p>{course.tutor}</p>
                 <div className="flex items-center">
