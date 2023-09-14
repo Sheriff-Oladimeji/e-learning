@@ -52,7 +52,7 @@ const Development = () => {
   return (
     <section className="mt-28 md:mt-6 w-[90%] mx-auto mb-20">
   
-      <Courses data={development} category="Development Courses"  buttons={buttons}/>
+      <Courses data={development} category="Development Courses"  buttons={buttons} type="development"/>
     </section>
   );
 }

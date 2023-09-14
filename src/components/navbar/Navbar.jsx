@@ -74,7 +74,7 @@ const Navbar = () => {
           className={`md:absolute  left-0
         md:-left-4  mt-2  bg-white  flex-col gap-6 py-4 md:shadow-2xl md:z-50 md:px-4 md:rounded-xl  ${
           openSubLinks ? "flex" : "hidden"
-        }`}
+        } `}
         >
           <span
             className="text-[#8B919A]"
@@ -114,7 +114,7 @@ const Navbar = () => {
               {link.id === 1 ? (
                 <>
                   <span
-                    className="font-semibold text-lightslateblue cursor-pointer"
+                    className="font-semibold text-lightslateblue cursor-pointer group"
                     onClick={handleDropDown}
                   >
                     {link.title}

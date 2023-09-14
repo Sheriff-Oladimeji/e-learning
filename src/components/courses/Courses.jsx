@@ -6,8 +6,9 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
-const Courses = ({ buttons, data,  category}) => {
+const Courses = ({ buttons, data,  category, type}) => {
     const [courses, setCourses] = useState(data);
  const dispatch = useDispatch();
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -90,7 +91,11 @@ const Courses = ({ buttons, data,  category}) => {
 
       <main className="grid sm:grid-cols-2 md:grid-cols-3 gap-14 mt-12">
         {courses.map((course) => (
-          <div key={course.id} className="border rounded-lg shadow-lg  ">
+          <Link
+            key={course.id}
+            className="border rounded-lg shadow-lg "
+            to={`/courses/${type}/${course.id}`}
+          >
             <img
               src={course.image}
               alt={course.title}
@@ -145,7 +150,7 @@ const Courses = ({ buttons, data,  category}) => {
                 </button>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </main>
       <ToastContainer />
