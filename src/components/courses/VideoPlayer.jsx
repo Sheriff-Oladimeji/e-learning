@@ -20,7 +20,7 @@ export default function VideoPlayer() {
     <div className="relative">
       <video
         ref={videoRef}
-        className="w-full h-56 md:h-96 bg-gray-100 object-cover rounded-md"
+        className="w-full h-56 md:h-96 bg-gray-100 object-cover rounded-md"fg
         src={video}
       />
 

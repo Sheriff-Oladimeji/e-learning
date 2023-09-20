@@ -32,22 +32,25 @@ const AllTemplate = () => {
           <Button value="All" url="" onClick={() => setCourses(allCourses)} />
           <button
             onClick={() => filterCategory("Popular")}
-            className={`${selectedCategory === "Popular" ? "bg-blue text-white" : ""
-              }  p-2 rounded-xl   border-none  text-center `}
+            className={`${
+              selectedCategory === "Popular" ? "bg-blue text-white" : ""
+            }  p-2 rounded-xl   border-none  text-center `}
           >
             Popular
           </button>
           <button
             onClick={() => filterCategory("New")}
-            className={`${selectedCategory === "New" ? "bg-blue text-white" : ""
-              }  p-2 rounded-xl px-6   border-none  text-center `}
+            className={`${
+              selectedCategory === "New" ? "bg-blue text-white" : ""
+            }  p-2 rounded-xl px-6   border-none  text-center `}
           >
             New
           </button>
           <button
             onClick={() => filterCategory("Price")}
-            className={`${selectedCategory === "Price" ? "bg-blue text-white" : ""
-              }  p-2 rounded-xl   border-none  text-center `}
+            className={`${
+              selectedCategory === "Price" ? "bg-blue text-white" : ""
+            }  p-2 rounded-xl   border-none  text-center `}
           >
             Price
           </button>
@@ -56,8 +59,10 @@ const AllTemplate = () => {
 
       <main className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
         {courses.map((course) => (
-          <div
+          <Link
+            to={`/template/${course.id}`}
             key={course.id}
+
             className="border rounded-lg shadow-lg  duration-300"
           >
             <img
@@ -72,7 +77,12 @@ const AllTemplate = () => {
                   {course.badge}
                 </span>
               </div>
-              <Link className="text-xl font-bold text-darkblue" to={`/template/${course.id}`}>{course.title}</Link>
+              <Link
+                className="text-xl font-bold text-darkblue"
+                to={`/template/${course.id}`}
+              >
+                {course.title}
+              </Link>
 
               <div>
                 <p>{course.tutor}</p>
@@ -87,7 +97,7 @@ const AllTemplate = () => {
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap gap-2 items-center">
                   <h4 className="text-lg font-bold text-darkblue">
-                  {course.price.toLocaleString("en-NG", {
+                    {course.price.toLocaleString("en-NG", {
                       style: "currency",
                       currency: "NGN",
                       minimumFractionDigits: 0,
@@ -102,7 +112,7 @@ const AllTemplate = () => {
                         minimumFractionDigits: 0,
                         maximumFractionDigits: 0,
                       })}
-                  </span>
+                    </span>
                   )}
                   {course.discount && (
                     <small className="text-xs">{course.discount}% off</small>
@@ -129,7 +139,7 @@ const AllTemplate = () => {
               </div>
               <ToastContainer />
             </div>
-          </div>
+          </Link>
         ))}
       </main>
     </section>

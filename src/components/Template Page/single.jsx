@@ -1,15 +1,15 @@
 
 import { useParams } from "react-router-dom";
-
-const CourseTemDescription = ({ courses }) => {
+import { allCourses } from "../../data/templates/alltem";
+const CourseTemDescription = () => {
   const { courseId } = useParams();
 
-  const selectedCourse = courses.find(
+  const selectedCourse = allCourses.find(
     (course) => course.id === parseInt(courseId)
   );
 
   return (
-    <div className="bg-black">
+    <div className="">
       {selectedCourse ? (
         <div>
           <h1>{selectedCourse.title}</h1>
