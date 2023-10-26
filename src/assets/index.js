@@ -14,6 +14,7 @@ import designFive from "./Design 2.png";
 import designSix from "./Design 3.png";
 import busOne from "./Business.png"
 import busTwo from "./Business 2.png"
+import video from "./React.mp4"
 
 const developmentImg = {
   devEight,
@@ -32,4 +33,4 @@ const designImg = {
 const businessImg = {
   busOne, busTwo, designFour, designFive
 }
-export {developmentImg, designImg, businessImg}
+export {developmentImg, designImg, businessImg, video}

@@ -91,16 +91,14 @@ const Courses = ({ buttons, data,  category, type}) => {
 
       <main className="grid sm:grid-cols-2 md:grid-cols-3 gap-14 mt-12">
         {courses.map((course) => (
-          <Link
-            key={course.id}
-            className="border rounded-lg shadow-lg "
-            to={`/courses/${type}/${course.id}`}
-          >
-            <img
-              src={course.image}
-              alt={course.title}
-              className="w-full h-[200px] object-cover rounded-t-lg "
-            />
+          <div key={course.id} className="border rounded-lg shadow-lg ">
+            <Link to={`/courses/${type}/${course.id}`}>
+              <img
+                src={course.image}
+                alt={course.title}
+                className="w-full h-[200px] object-cover rounded-t-lg "
+              />
+            </Link>
             <div className="py-3 flex flex-col  gap-3 w-full px-4 ">
               <div className="flex gap-4 items-center">
                 <p className="text-blue">{course.category}</p>
@@ -118,6 +116,7 @@ const Courses = ({ buttons, data,  category, type}) => {
                   <span>{course.rating}</span>
                 </div>
               </div>
+
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap gap-2 items-center">
                   <h4 className="text-lg font-bold text-darkblue">
@@ -150,7 +149,7 @@ const Courses = ({ buttons, data,  category, type}) => {
                 </button>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </main>
       <ToastContainer />

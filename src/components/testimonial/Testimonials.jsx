@@ -2,7 +2,7 @@ import data from "../../data/testimonial/testimonial.json"
 
 const Testimonials = () => {
   return (
-    <section className="w-[90%] my-20 font-mont mx-auto ">
+    <section className="w-[90%] mx-auto my-20">
       <div className="flex flex-col items-center mb-10">
         <h1 className="font-bold text-4xl md-text-6xl text-center text-midnightBlue my-8">
           Testimonials
@@ -12,13 +12,13 @@ const Testimonials = () => {
           to us, and join our esteemed learning community today
         </p>
       </div>
-      <main className="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+      <main className="grid md:grid-cols-3 sm:grid-cols-2 gap-8 w-full">
         {data.map((card) => (
           <div
             key={card.id}
             className="shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-full p-4 py-4 rounded-md"
           >
-            <div className="flex  gap-4 mb-3 items-start flex-wrap">
+            <div className="flex  gap-4 mb-3 items-start flex-wrap w-full">
               <img
                 src={card.image}
                 alt={card.name}
