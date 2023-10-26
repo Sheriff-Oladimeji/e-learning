@@ -1,6 +1,6 @@
 
 import { useParams } from "react-router-dom";
-import { allCourses } from "../../data/templates/alltem";
+import { allCourses, testmonal } from "../../data/templates/alltem";
 const CourseTemDescription = () => {
   const { courseId } = useParams();
 
@@ -94,35 +94,14 @@ const CourseTemDescription = () => {
       <div class="px-7 py-7 md:px-7 lg:px-14">
         <h1 class="text-[24px] font-semibold text-[#020F24]">Student Reviews</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+         
           <div>
             <div class="bg-white p-5 rounded-xl shadow-xl">
               <span class="text-[#8B919A] text-[10px] flex justify-end">2 months ago</span>
               <div class="md:flex md:justify-between">
                 <div class="flex">
-                  <img src="/Asset/Student (1).png" alt="" />
-                    <p class="flex items-center text-[#020F24] text-[16px] font-medium">Brooklyn Simmons</p>
-                </div>
-                <div class="flex items-center justify-end">
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <span class="flex items-center text-[#8B919A] text-[10px]">{selectedCourse.rating}</span>
-                </div>
-              </div>
-              <div>
-                <p class="text-[#353F50] text-[14px] pt-5">I've tried various online learning platforms, but this one stands out from the rest. The quality of content, the interactive learning experience, and the valuable resources provided have surpassed my expectations. It's been an incredible learning adventure</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="bg-white p-5 rounded-xl shadow-xl">
-              <span class="text-[#8B919A] text-[10px] flex justify-end">2 months ago</span>
-              <div class="md:flex md:justify-between">
-                <div class="flex">
-                  <img src="/Asset/Student (1).png" alt="" />
-                    <p class="flex items-center text-[#020F24] text-[16px] font-medium">Brooklyn Simmons</p>
+                  <img src={selectedCourse.avarta} alt="" className="w-10 h-10 object-cover rounded-full" />
+                    <p class="flex items-center text-[#020F24] text-[16px] font-medium">hello</p>
                 </div>
                 <div class="flex items-center justify-end">
                   <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
@@ -138,94 +117,10 @@ const CourseTemDescription = () => {
               </div>
             </div>
           </div>
-          <div>
-            <div class="bg-white p-5 rounded-xl shadow-xl">
-              <span class="text-[#8B919A] text-[10px] flex justify-end">2 months ago</span>
-              <div class="md:flex md:justify-between">
-                <div class="flex">
-                  <img src="/Asset/Student (1).png" alt="" />
-                    <p class="flex items-center text-[#020F24] text-[16px] font-medium">Brooklyn Simmons</p>
-                </div>
-                <div class="flex items-center justify-end">
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <span class="flex items-center text-[#8B919A] text-[10px]">(4.5)</span>
-                </div>
-              </div>
-              <div>
-                <p class="text-[#353F50] text-[14px] pt-5">I've tried various online learning platforms, but this one stands out from the rest. The quality of content, the interactive learning experience, and the valuable resources provided have surpassed my expectations. It's been an incredible learning adventure</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="bg-white p-5 rounded-xl shadow-xl">
-              <span class="text-[#8B919A] text-[10px] flex justify-end">2 months ago</span>
-              <div class="md:flex md:justify-between">
-                <div class="flex">
-                  <img src="/Asset/Student (1).png" alt="" />
-                    <p class="flex items-center text-[#020F24] text-[16px] font-medium">Brooklyn Simmons</p>
-                </div>
-                <div class="flex items-center justify-end">
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <span class="flex items-center text-[#8B919A] text-[10px]">(4.5)</span>
-                </div>
-              </div>
-              <div>
-                <p class="text-[#353F50] text-[14px] pt-5">I've tried various online learning platforms, but this one stands out from the rest. The quality of content, the interactive learning experience, and the valuable resources provided have surpassed my expectations. It's been an incredible learning adventure</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="bg-white p-5 rounded-xl shadow-xl">
-              <span class="text-[#8B919A] text-[10px] flex justify-end">2 months ago</span>
-              <div class="md:flex md:justify-between">
-                <div class="flex">
-                  <img src="/Asset/Student (1).png" alt="" />
-                  <p class="flex items-center text-[#020F24] text-[16px] font-medium">Brooklyn Simmons</p>
-                </div>
-                <div class="flex items-center justify-end">
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <span class="flex items-center text-[#8B919A] text-[10px]">(4.5)</span>
-                </div>
-              </div>
-              <div>
-                <p class="text-[#353F50] text-[14px] pt-5">I've tried various online learning platforms, but this one stands out from the rest. The quality of content, the interactive learning experience, and the valuable resources provided have surpassed my expectations. It's been an incredible learning adventure</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="bg-white p-5 rounded-xl shadow-xl">
-              <span class="text-[#8B919A] text-[10px] flex justify-end">2 months ago</span>
-              <div class="md:flex md:justify-between">
-                <div class="flex">
-                  <img src="/Asset/Student (1).png" alt="" />
-                    <p class="flex items-center text-[#020F24] text-[16px] font-medium">Brooklyn Simmons</p>
-                </div>
-                <div class="flex items-center justify-end">
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <i class="fa fa-star text-[#FFC728] text-[16px] px-1"></i>
-                  <span class="flex items-center text-[#8B919A] text-[10px]">(4.5)</span>
-                </div>
-              </div>
-              <div>
-                <p className="text-[#353F50] text-[14px] pt-5">I've tried various online learning platforms, but this one stands out from the rest. The quality of content, the interactive learning experience, and the valuable resources provided have surpassed my expectations. It's been an incredible learning adventure</p>
-              </div>
-            </div>
-          </div>
+        
+         
+         
+        
         </div>
       </div>
     
