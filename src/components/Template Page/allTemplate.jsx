@@ -72,7 +72,7 @@ const AllTemplate = () => {
                   {course.badge}
                 </span>
               </div>
-              <Link className="text-xl font-bold text-darkblue" to={`/template/${course.id}`}>{course.title}</Link>
+              <Link to={`/template/${course.id}`}>{course.title}</Link>
 
               <div>
                 <p>{course.tutor}</p>
