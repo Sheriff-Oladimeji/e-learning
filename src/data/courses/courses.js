@@ -1,4 +1,4 @@
-import { developmentImg , designImg, businessImg} from "../../assets";
+import { developmentImg, designImg, businessImg } from "../../assets";
 const development = [
   {
     id: 1,
@@ -440,4 +440,6 @@ const marketing = [
     image: businessImg.busOne,
   },
 ];
-export {development, design, business, marketing}
+
+const allCourses = [...development, ...design, ...business, ...marketing];
+export { development, design, business, marketing, allCourses };
