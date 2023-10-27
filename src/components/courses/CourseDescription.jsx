@@ -1,6 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import { useParams } from "react-router-dom";
 import VideoPlayer from "./VideoPlayer";
+import Summary from "./Summary";
 
 const CourseDescription = ({ data }) => {
   const { courseId } = useParams();
@@ -60,16 +62,7 @@ const CourseDescription = ({ data }) => {
           </p>
         </div>
       </main>
-      <aside>
-        hello
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque,
-          repellat nihil. Esse quae sint architecto corporis excepturi,
-          incidunt, ab voluptatem tempora a blanditiis molestiae, exercitationem
-          autem eveniet suscipit dolores consequuntur quisquam nemo explicabo
-          voluptatum. Porro optio earum voluptatibus aut corrupti.
-        </p>
-      </aside>
+      <Summary item={selectedCourse} />
     </section>
   );
 };
