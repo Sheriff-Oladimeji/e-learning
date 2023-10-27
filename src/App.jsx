@@ -24,6 +24,9 @@ import Business from "./pages/courses/business/Business";
 import { useLocation } from "react-router-dom";
 import CourseTemDescription from "./components/Template Page/single";
 import DevelopmentDesc from "./pages/courses/development/DevelopmentDesc";
+import DesignDesc from "./pages/courses/design/DesignDesc";
+import MarketingDesc from "./pages/courses/marketing/MarketingDesc";
+import BusinessDesc from "./pages/courses/business/BusinessDesc";
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -63,6 +66,18 @@ const App = () => {
          <Route
             path="/courses/development/:courseId"
           element= {<DevelopmentDesc />}
+          />
+         <Route
+            path="/courses/design/:courseId"
+          element= {<DesignDesc />}
+          />
+         <Route
+            path="/courses/marketing/:courseId"
+          element= {<MarketingDesc />}
+          />
+         <Route
+            path="/courses/business/:courseId"
+          element= {<BusinessDesc />}
           />
 
          <Route path="contact" element={<Contact />} />
