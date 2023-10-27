@@ -38,7 +38,7 @@ const Design = () => {
   return (
       <section className="mt-28 md:mt-6 w-[90%] mx-auto mb-20">
   
-      <Courses data={design} category="Design Courses"  buttons={buttons}/>
+      <Courses data={design} category="Design Courses"  buttons={buttons} type="design"/>
     </section>
   
   )

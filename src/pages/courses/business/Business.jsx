@@ -54,6 +54,7 @@ const Business = () => {
         data={business}
         category="Business Courses"
         buttons={buttons}
+        type="business"
       />
     </section>
   );
