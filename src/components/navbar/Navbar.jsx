@@ -58,15 +58,13 @@ const links = [
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [openSubLinks, setOpenSubLinks] = useState(false);
- 
   const cartCount = useSelector((state) => state.cart.cartItems.length);
   const handleNav = () => {
     setNav(!nav);
   };
-  const hideSublinks = () => {
-    setTimeout(() => {
-      setOpenSubLinks(false);
-    }, 150);
+
+  const handleDropDown = () => {
+    setOpenSubLinks(!openSubLinks);
   };
 
   const renderSubLinks = (subLinks) => {
@@ -86,6 +84,7 @@ const Navbar = () => {
               className="font-semibold flex justify-between items-center gap-4 text-darkslateblue"
               onClick={() => {
                 handleNav();
+                handleDropDown();
               }}
             >
               {subLink.title}
@@ -109,15 +108,15 @@ const Navbar = () => {
           {links.map((link) => (
             <div key={link.id} className="relative">
               {link.id === 1 ? (
-                <div
-                  onMouseEnter={() => setOpenSubLinks(true)}
-                  onMouseLeave={hideSublinks}
-                >
-                  <span className="font-semibold text-lightslateblue cursor-pointer group">
+                <>
+                  <span
+                    className="font-semibold text-lightslateblue cursor-pointer group"
+                    onClick={handleDropDown}
+                  >
                     {link.title}
                   </span>
                   {renderSubLinks(link.subLinks)}
-                </div>
+                </>
               ) : (
                 <Link
                   to={link.url}
@@ -184,12 +183,11 @@ const Navbar = () => {
           {links.map((link) => (
             <div key={link.id} className="relative">
               {link.id === 1 ? (
-                <div
-                  className="relative"
-                  onMouseEnter={() => setOpenSubLinks(true)}
-                    onMouseLeave={hideSublinks}
-                >
-                  <span className="font-semibold text-lightslateblue cursor-pointer">
+                <div className="relative">
+                  <span
+                    className="font-semibold text-lightslateblue cursor-pointer"
+                    onClick={handleDropDown}
+                  >
                     {link.title}
                   </span>
                   {renderSubLinks(link.subLinks)}
