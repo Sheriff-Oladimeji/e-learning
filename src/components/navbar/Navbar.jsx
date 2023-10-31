@@ -29,7 +29,7 @@ const links = [
         title: "Business",
         url: "/courses/business",
       },
-     
+
       {
         id: 4,
         title: "Marketing",
@@ -58,13 +58,15 @@ const links = [
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [openSubLinks, setOpenSubLinks] = useState(false);
-   const cartCount = useSelector((state) => state.cart.cartItems.length);
+ 
+  const cartCount = useSelector((state) => state.cart.cartItems.length);
   const handleNav = () => {
     setNav(!nav);
   };
-
-  const handleDropDown = () => {
-    setOpenSubLinks(!openSubLinks);
+  const hideSublinks = () => {
+    setTimeout(() => {
+      setOpenSubLinks(false);
+    }, 150);
   };
 
   const renderSubLinks = (subLinks) => {
@@ -76,19 +78,14 @@ const Navbar = () => {
           openSubLinks ? "flex" : "hidden"
         } `}
         >
-          <span
-            className="text-[#8B919A]"
-          >
-            Categories
-          </span>
+          <span className="text-[#8B919A]">Categories</span>
           {subLinks.map((subLink) => (
             <Link
               key={subLink.id}
               to={subLink.url}
               className="font-semibold flex justify-between items-center gap-4 text-darkslateblue"
               onClick={() => {
-                handleNav()
-                handleDropDown()
+                handleNav();
               }}
             >
               {subLink.title}
@@ -112,15 +109,15 @@ const Navbar = () => {
           {links.map((link) => (
             <div key={link.id} className="relative">
               {link.id === 1 ? (
-                <>
-                  <span
-                    className="font-semibold text-lightslateblue cursor-pointer group"
-                    onClick={handleDropDown}
-                  >
+                <div
+                  onMouseEnter={() => setOpenSubLinks(true)}
+                  onMouseLeave={hideSublinks}
+                >
+                  <span className="font-semibold text-lightslateblue cursor-pointer group">
                     {link.title}
                   </span>
                   {renderSubLinks(link.subLinks)}
-                </>
+                </div>
               ) : (
                 <Link
                   to={link.url}
@@ -165,7 +162,7 @@ const Navbar = () => {
           <Link to="/cart" className="relative">
             <BsCart3 size={25} />
             <span className="absolute -top-2 left-4 rounded-full bg-blue p-0.5 px-2 text-sm text-red-50 ">
-             {cartCount}
+              {cartCount}
             </span>
           </Link>
           <button onClick={handleNav}>
@@ -187,11 +184,12 @@ const Navbar = () => {
           {links.map((link) => (
             <div key={link.id} className="relative">
               {link.id === 1 ? (
-                <div className="relative">
-                  <span
-                    className="font-semibold text-lightslateblue cursor-pointer"
-                    onClick={handleDropDown}
-                  >
+                <div
+                  className="relative"
+                  onMouseEnter={() => setOpenSubLinks(true)}
+                    onMouseLeave={hideSublinks}
+                >
+                  <span className="font-semibold text-lightslateblue cursor-pointer">
                     {link.title}
                   </span>
                   {renderSubLinks(link.subLinks)}
