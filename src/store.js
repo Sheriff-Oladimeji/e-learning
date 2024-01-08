@@ -1,13 +1,25 @@
-import { create } from "zustand";
+import create from "zustand";
 
+export const useCartStore = create((set) => {
+  const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
 
-
-export const useCartStore = create((set) => ({
-    cart: [],
+  return {
+    cart: storedCart,
     addToCart: (id) => {
-        set((state) => ({cart:  [...state.cart,  id]}))
+      set((state) => {
+        const newCart = [...state.cart, id];
+
+        localStorage.setItem("cart", JSON.stringify(newCart));
+        return { cart: newCart };
+      });
     },
     removeFromCart: (id) => {
-        set((state) => ({cart : state.cart.filter((item) => item !== id)}))
-    }
-}))
+      set((state) => {
+        const newCart = state.cart.filter((item) => item !== id);
+
+        localStorage.setItem("cart", JSON.stringify(newCart));
+        return { cart: newCart };
+      });
+    },
+  };
+});

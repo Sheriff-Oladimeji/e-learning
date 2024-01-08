@@ -1,10 +1,11 @@
-import { useSelector } from "react-redux";
+
 import payment from "../../assets/payment.png"
 import Button from "../../components/button/Button";
+import { useCartStore } from "../../store";
 
 
 const Checkout = () => {
-  const cartItems = useSelector((state) => state.cart.cartItems);
+  const cartItems =  useCartStore(state => state.cart)
   const initialPrice = cartItems.reduce((total, item) => {
     const price = item.initialPrice ? item.initialPrice : item.price;
     return total + price;
