@@ -6,7 +6,7 @@ import { BsCart3 } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { useSelector } from "react-redux";
+import { useCartStore } from "../../store";
 
 const links = [
   {
@@ -58,7 +58,7 @@ const links = [
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [openSubLinks, setOpenSubLinks] = useState(false);
-  const cartCount = useSelector((state) => state.cart.cartItems.length);
+  const cartCount =    useCartStore(state => state.cart.length)
   const handleNav = () => {
     setNav(!nav);
   };
