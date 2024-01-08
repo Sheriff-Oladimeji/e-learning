@@ -1,36 +1,29 @@
-import { useSelector } from "react-redux";
 import cart from "../../assets/empty-cart.png";
-import { useDispatch } from "react-redux";
-import { removeFromCart } from "../../features/cart";
 
 import Button from "../../components/button/Button";
 import { Link } from "react-router-dom";
+import { useCartStore } from "../../store";
 
 const Cart = () => {
-  const cartItems = useSelector((state) => state.cart.cartItems);
+  const cartItems = useCartStore((state) => state.cart);
   const initialPrice = cartItems.reduce((total, item) => {
-
-    const price =
-      item.initialPrice? item.initialPrice : item.price;
+    const price = item.initialPrice ? item.initialPrice : item.price;
     return total + price;
   }, 0);
-   const discountedPrices = cartItems.map((item) => {
-     return item.discount
-       ? item.initialPrice * (1 - item.discount / 100) 
-       : null;
-   });
+  const discountedPrices = cartItems.map((item) => {
+    return item.discount ? item.initialPrice * (1 - item.discount / 100) : null;
+  });
 
-const newPrice = discountedPrices.reduce(
-  (total, discountedPrice) => total + discountedPrice,
-  0
-);
-  
-  const totalPrice = initialPrice-newPrice
-  
-  const dispatch = useDispatch();
+  const newPrice = discountedPrices.reduce(
+    (total, discountedPrice) => total + discountedPrice,
+    0
+  );
 
+  const totalPrice = initialPrice - newPrice;
+
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
   const handleRemoveFromCart = (itemId) => {
-    dispatch(removeFromCart(itemId));
+    removeFromCart(itemId);
   };
 
   return (
@@ -46,8 +39,8 @@ const newPrice = discountedPrices.reduce(
           <div className="flex flex-col gap-4 border border-[#E6E7E9] rounded-md w-full items-center pb-4 ">
             <img src={cart} alt="empty cart" className="w-[50%]" />
             <p className="text-center md:text-start">
-              Your cart is empty. Its time to fill it with knowledge! Browse
-              our courses and add items that interest you
+              Your cart is empty. Its time to fill it with knowledge! Browse our
+              courses and add items that interest you
             </p>
             <Button value="Browse Courses" url="/courses/development" />
           </div>
