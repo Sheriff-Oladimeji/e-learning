@@ -1,20 +1,21 @@
 import { useState } from "react";
 import { allCourses } from "../../data/courses/home";
 import Button from "../button/Button";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../features/cart";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useCartStore } from "../../store";
 
 const CoursesHome = () => {
-  const dispatch = useDispatch()
+ 
   const [courses, setCourses] = useState(allCourses);
-  
+  const addToCart = useCartStore((state) => state.addToCart)
+  const cart = useCartStore(state => state.cart)
 
   
 
    const handleAddToCart = (course) => {
-     dispatch(addToCart(course)); 
+     addToCart(course)
     toast.success("Item added to cart", {
       position: "top-right",
       autoClose: 5000,
@@ -25,6 +26,7 @@ const CoursesHome = () => {
       progress: undefined,
       theme: "light",
     });
+     console.log(cart);
    };
 
    const [selectedCategory, setSelectedCategory] = useState("All"); // Initialize with 'All'
