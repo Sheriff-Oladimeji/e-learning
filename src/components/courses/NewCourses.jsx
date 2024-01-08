@@ -1,12 +1,11 @@
 import { newCourses } from "../../data/courses/home";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../features/cart";
+import { useCartStore } from "../../store";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const NewCourses = () => {
-  const dispatch = useDispatch();
+const addToCart = useCartStore((state) => state.addToCart);
    const handleAddToCart = (course) => {
-     dispatch(addToCart(course));
+     addToCart(course);
    toast.success("Item added to cart", {
      position: "top-right",
      autoClose: 5000,

@@ -10,7 +10,7 @@ const CoursesHome = () => {
  
   const [courses, setCourses] = useState(allCourses);
   const addToCart = useCartStore((state) => state.addToCart)
-  const cart = useCartStore(state => state.cart)
+ 
 
   
 
@@ -26,7 +26,7 @@ const CoursesHome = () => {
       progress: undefined,
       theme: "light",
     });
-     console.log(cart);
+    
    };
 
    const [selectedCategory, setSelectedCategory] = useState("All"); // Initialize with 'All'

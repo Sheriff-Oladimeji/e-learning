@@ -2,19 +2,18 @@
 import bgImg from "../../assets/course-bg.png"
 import Button from "../button/Button";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../features/cart";
+import { useCartStore } from "../../store";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 
 const Courses = ({ buttons, data,  category, type}) => {
     const [courses, setCourses] = useState(data);
- const dispatch = useDispatch();
+const addToCart = useCartStore((state) => state.addToCart);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [header, setHeader] = useState(category)
      const handleAddToCart = (course) => {
-       dispatch(addToCart(course));
+        addToCart(course);
       toast.success("Item added to cart", {
         position: "top-right",
         autoClose: 5000,
