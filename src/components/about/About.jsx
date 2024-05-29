@@ -1,6 +1,6 @@
-import double from "../../assets/double.png"
+import double from "../../assets/double.png";
 import about from "../../data/about/about";
-import {TfiHeadphoneAlt} from "react-icons/tfi"
+import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { BiMoviePlay } from "react-icons/bi";
 import { HiOutlineAcademicCap } from "react-icons/hi";
 const features = [
@@ -37,10 +37,12 @@ const features = [
 ];
 
 const About = () => {
+  let integer = [1, 2, 4];
+  integer.conc;
   return (
     <section className="mb-12">
-      <div className="text-center my-6">
-        <h1 className="text-3xl md:text-4xl text-midnightBlue font-bold mb-4">
+      <div className="my-6 text-center">
+        <h1 className="mb-4 text-3xl font-bold md:text-4xl text-midnightBlue">
           What Sets Us Apart
         </h1>
         <p className="text-xl text-lightslateblue">
@@ -65,35 +67,35 @@ const About = () => {
               <img src={item.icon} alt={item.icon} className="w-10" />
             </div>
             <div>
-              <h4 className="font-semibold mb-2  ">{item.title}</h4>
+              <h4 className="mb-2 font-semibold ">{item.title}</h4>
               <small className="text-lightslateblue">{item.desc}</small>
             </div>
           </div>
         ))}
       </main>
-      <div className="mt-14 flex flex-col md:flex-row justify-between items-center  gap-20 md:gap-48">
+      <div className="flex flex-col items-center justify-between gap-20 mt-14 md:flex-row md:gap-48">
         <img src={double} alt="" className="h-[500px] object-contain" />
-        <div className="flex flex-col gap-8  ">
-          <h2 className="font-semibold text-2xl md:text-3xl text-darkslateblue text-center md:text-start">
+        <div className="flex flex-col gap-8 ">
+          <h2 className="text-2xl font-semibold text-center md:text-3xl text-darkslateblue md:text-start">
             Embrace <span className="text-yellow">Limitless</span> Learning
             Opportunities, Accessible Anytime and
             <span className="text-yellow">Anywhere</span>.
           </h2>
-          <p className="text-lightslateblue text-center md:text-start text-xl">
+          <p className="text-xl text-center text-lightslateblue md:text-start">
             Elevate your skills through our exceptional platform, featuring
             world-class courses, certificates, and a vast repository of online
             knowledge
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8  w-full">
+          <div className="grid w-full grid-cols-2 gap-8 md:grid-cols-3">
             {features.map((feature) => (
               <div
                 key={feature.id}
-                className="flex justify-center flex-col lg:flex-row gap-3 items-center"
+                className="flex flex-col items-center gap-3 lg:flex-row"
               >
                 <span className="bg-[#E6EFFE] p-2 rounded-full text-[#BD5C17]">
                   {feature.icon}
                 </span>
-                <p className="text-darkblue text-center">{feature.title}</p>
+                <p className="text-center text-darkblue">{feature.title}</p>
               </div>
             ))}
           </div>
@@ -101,6 +103,6 @@ const About = () => {
       </div>
     </section>
   );
-}
+};
 
-export default About
+export default About;

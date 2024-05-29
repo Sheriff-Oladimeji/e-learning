@@ -14,7 +14,7 @@ export default {
         lightgrey: "#8B919A",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        poppins: ["Poppins", "Helvetica", "sans-serif"],
       },
     },
   },

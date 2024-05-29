@@ -1,36 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-      scroll-behavior: smooth;
-    }
-*{
+    scroll-behavior: smooth;
+  }
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
 }
 
 .scroll {
-      overflow-x: scroll;
-      scrollbar-width: none; 
-      -ms-overflow-style: none; 
-    }
-
-    .scroll::-webkit-scrollbar {
-      display: none; 
-    }
-
-.input{
-  @apply p-2 rounded-lg border border-[#B1B5BB]  active:hover:outline-none outline-none;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.form-control{
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.input {
+  @apply p-2 rounded-lg border border-[#B1B5BB] active:hover:outline-none outline-none;
+}
+.form-control {
   @apply flex flex-col gap-2;
 }
-.label{
+.label {
   @apply text-lightslateblue;
 }
-

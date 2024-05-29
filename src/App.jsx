@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
- 
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
 import Home from "./pages/home/Home";
 import Blog from "./pages/blog/Blog";
@@ -38,55 +33,51 @@ function ScrollToTopOnRouteChange() {
   return null;
 }
 
-
 const App = () => {
- return (
-   <Router>
-     <section className="flex flex-col justify-between min-h-screen">
-       <ScrollToTopOnRouteChange />
-       <Navbar />
-       <Routes>
-         <Route index element={<Home />} />
-        
-         <Route path="blog" element={<Blog />} />
-         <Route path="cart" element={<Cart />} />
-         <Route path="checkout" element={<Checkout />} />
-         <Route path="search" element={<Search />} />
-         <Route path="courses/development" element={<Development />} />
-         <Route path="courses/design" element={<Design />} />
-         <Route path="courses/marketing" element={<Marketing />} />
-         <Route path="courses/business" element={<Business />} />
-         <Route path="auth/login" element={<Login />} />
-         <Route path="auth/signup" element={<SignUp />} />
-         <Route path="template" element={<Template />} />
-         <Route
+  return (
+    <Router>
+      <section className="flex flex-col justify-between min-h-screen font-poppins">
+        <ScrollToTopOnRouteChange />
+        <Navbar />
+        <Routes>
+          <Route index element={<Home />} />
+
+          <Route path="blog" element={<Blog />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="search" element={<Search />} />
+          <Route path="courses/development" element={<Development />} />
+          <Route path="courses/design" element={<Design />} />
+          <Route path="courses/marketing" element={<Marketing />} />
+          <Route path="courses/business" element={<Business />} />
+          <Route path="auth/login" element={<Login />} />
+          <Route path="auth/signup" element={<SignUp />} />
+          <Route path="template" element={<Template />} />
+          <Route
             path="/template/:courseId"
-          element= {<CourseTemDescription />}
+            element={<CourseTemDescription />}
           />
-         <Route
+          <Route
             path="/courses/development/:courseId"
-          element= {<DevelopmentDesc />}
+            element={<DevelopmentDesc />}
           />
-         <Route
-            path="/courses/design/:courseId"
-          element= {<DesignDesc />}
-          />
-         <Route
+          <Route path="/courses/design/:courseId" element={<DesignDesc />} />
+          <Route
             path="/courses/marketing/:courseId"
-          element= {<MarketingDesc />}
+            element={<MarketingDesc />}
           />
-         <Route
+          <Route
             path="/courses/business/:courseId"
-          element= {<BusinessDesc />}
+            element={<BusinessDesc />}
           />
 
-         <Route path="contact" element={<Contact />} />
-         <Route path="*" element={<NotFound />} />
-       </Routes>
-       <Footer />
-     </section>
-   </Router>
- );
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </section>
+    </Router>
+  );
 };
 
 export default App;
