@@ -1,9 +1,9 @@
-import About from "../../components/about/About"
-import CoursesHome from "../../components/courses/CoursesHome"
-import NewCourses from "../../components/courses/NewCourses"
-import HomeHeader from "../../components/header/HomeHeader"
-import Testimonials from "../../components/testimonial/Testimonials"
-
+import About from "../../components/about/About";
+import CoursesHome from "../../components/courses/CoursesHome";
+import NewCourses from "../../components/courses/NewCourses";
+import HomeHeader from "../../components/header/HomeHeader";
+import Testimonials from "../../components/testimonial/Testimonials";
+import BecomeTutor from "../../components/tutor/BecomeTutor";
 
 const Home = () => {
   return (
@@ -12,9 +12,10 @@ const Home = () => {
       <NewCourses />
       <CoursesHome />
       <About />
-      <Testimonials/>
-   </main>
-  )
-}
+      <Testimonials />
+      <BecomeTutor />
+    </main>
+  );
+};
 
-export default Home
+export default Home;

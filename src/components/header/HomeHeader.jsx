@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import hero from "../../assets/hero.png"
+import hero from "../../assets/hero.jpeg";
 import Button from "../button/Button";
 const HomeHeader = () => {
   return (
-    <header className="flex  flex-col-reverse items-center justify-between mb-8 md:flex-row gap-8">
-      <div className="flex-1 flex flex-col text-center md:text-start gap-6">
-        <h1 className="font-bold text-darkblue text-3xl md:text-5xl leading-snug">
+    <header className="flex flex-col-reverse items-center justify-between gap-8 my-10 md:flex-row">
+      <div className="flex flex-col flex-1 gap-6 text-center md:text-start">
+        <h1 className="text-3xl font-bold md:leading-normal text-darkblue md:text-5xl">
           Unleash Your <span className="text-yellow">Creativity</span> and Make
           Your Mark on the
           <span className="text-yellow"> World</span>
@@ -22,7 +22,18 @@ const HomeHeader = () => {
           width="mx-auto md:mx-0 w-[180px]"
         />
       </div>
-    <img src={hero} alt="hero" className="flex-1 h-[400px] object-contain" />
+      <div className="flex items-baseline justify-between gap-4">
+        <img
+          src={hero}
+          alt="hero"
+          className="w-[165px] h-[300px] object-left object-cover"
+        />
+        <img
+          src={hero}
+          alt="hero"
+          className="w-[350px] h-[400px] object-cover object-right"
+        />
+      </div>
     </header>
   );
 };
